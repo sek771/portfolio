@@ -4,7 +4,7 @@ const Footer = () => {
     <>
       <footer className="w-full bg-slate-600">
         <div className="text-center">
-          <p>copyright</p>
+          <p className="text-4xl">Copyright</p>
         </div>
         <div className="grid grid-cols-2 mx-10 py-5 lg:flex lg justify-center lg:items-center">
           <Mini />
