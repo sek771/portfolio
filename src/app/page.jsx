@@ -1,6 +1,6 @@
-import Header from "./components/layouts/header";
-import Home from "./home";
-import Footer from "./components/layouts/footer";
+import Header from "@/app/components/layouts/header";
+import Home from "@/app/home";
+import Footer from "@/app/components/layouts/footer";
 
 export default function HomePage() {
   return (

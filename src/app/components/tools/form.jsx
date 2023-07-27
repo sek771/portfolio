@@ -1,4 +1,4 @@
-import Input from "./input";
+import Input from "@/app/components/tools/input";
 
 const Form = () => {
   return (

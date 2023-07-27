@@ -1,14 +1,16 @@
-import Main from "../components/layouts/main";
+import Main from "@/app/components/layouts/main";
 
-import Introduction from "./section/introduction";
-import Skills from "./section/skills";
-import Projects from "./section/projects";
-import Timeline from "./section/timeline";
-import Contact from "./section/contact";
+import Header from "@/app/home/section/header";
+import Introduction from "@/app/home/section/introduction";
+import Skills from "@/app/home/section/skills";
+import Projects from "@/app/home/section/projects";
+import Timeline from "@/app/home/section/timeline";
+import Contact from "@/app/home/section/contact";
 
 const Home = () => {
   return (
     <Main>
+      <Header />
       <Introduction />
       <Skills />
       <Projects />
