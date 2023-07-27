@@ -1,9 +1,12 @@
+"use client";
+
 import { slide as Menu } from "react-burger-menu";
-import styles from "./styles";
+import { styles } from "./styles";
+
 const HeaderMobile = () => {
   return (
-    <Menu>
-      <>
+    <header className="flex lg:hidden">
+      <Menu styles={styles}>
         <section className="h-full w-full bg-slate-400">
           <div className="grid grid-cols-1 flex text-center text-2xl  ">
             <div className="pt-5">
@@ -43,8 +46,8 @@ const HeaderMobile = () => {
             </div>
           </div>
         </section>
-      </>
-    </Menu>
+      </Menu>
+    </header>
   );
 };
 export default HeaderMobile;
