@@ -14,6 +14,7 @@ const Projects = () => {
           {data.map((element) => {
             return (
               <Card
+                key={element.id}
                 title={element.title}
                 img={element.img}
                 onClick={() => alert(element.title)}
