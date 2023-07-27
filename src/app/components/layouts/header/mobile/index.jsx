@@ -7,8 +7,11 @@ const HeaderMobile = () => {
   return (
     <header className="flex lg:hidden">
       <Menu styles={styles}>
-        <section className="h-full w-full bg-slate-400">
-          <div className="grid grid-cols-1 flex text-center text-2xl  ">
+        <section className="">
+          <div className="grid grid-cols-1 flex text-left text-2xl  ">
+            <div>
+              <img src="./mobile/logo" alt=""logo />
+            </div>
             <div className="pt-5">
               <a id="home" className="menu-item" href="#">
                 Accueil

@@ -10,7 +10,7 @@ const Projects = () => {
         <h1 className="text-4xl pt-10 pb-5">projet</h1>
       </div>
       <div>
-        <div className=" grid grid-cols-2 pt-5 w-full bg-gray-600 lg:flex lg:justify-center">
+        <div className="lg:grid lg:grid-cols-4 lg:justify-items-center grid grid-cols-2 justify-items-center px-6 bg-gray-600">
           {data.map((element) => {
             return (
               <Card

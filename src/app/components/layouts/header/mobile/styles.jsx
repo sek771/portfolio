@@ -1,44 +1,44 @@
 export let styles = {
   bmBurgerButton: {
     position: "fixed",
-    width: "36px",
+    width: "45px",
     height: "30px",
-    left: "36px",
-    top: "36px",
+    left: "25px",
+    top: "25px",
   },
   bmBurgerBars: {
-    background: "#373a47",
+    background: "#57BADE",
   },
   bmBurgerBarsHover: {
-    background: "#a90000",
+    background: "#79D4F5",
   },
   bmCrossButton: {
-    height: "24px",
-    width: "24px",
+    height: "40px",
+    width: "40px",
   },
   bmCross: {
-    background: "#bdc3c7",
+    background: "#57BADE",
   },
   bmMenuWrap: {
     position: "fixed",
     height: "100%",
   },
   bmMenu: {
-    background: "#373a47",
+    background: "#0aface",
     padding: "2.5em 1.5em 0",
     fontSize: "1.15em",
   },
   bmMorphShape: {
-    fill: "#373a47",
+    fill: "##62DDDE",
   },
   bmItemList: {
-    color: "#b8b7ad",
+    color: "#5778FA",
     padding: "0.8em",
   },
   bmItem: {
     display: "inline-block",
   },
   bmOverlay: {
-    background: "rgba(0, 0, 0, 0.3)",
+    background: "#57BADE",
   },
 };

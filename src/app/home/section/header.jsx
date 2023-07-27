@@ -7,7 +7,7 @@ const Header = () => {
             Bienvenue sur le portfolio de mr sacko
           </h2>
         </div>
-        <div className="grid grid-cols-2 mx-10 py-6 lg:flex lg:justify-center lg:px-96">
+        <div className="grid grid-cols-2 justify-items-center mx-10 py-6 lg:grid lg:justify-items-center">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYYL7xdJNiFKKRoigs3neLNWfzEEybBZK5YA&usqp=CAU"
             alt=""
