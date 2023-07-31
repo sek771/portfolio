@@ -1,6 +1,6 @@
 const Timeline = () => {
   return (
-    <section className="px-5">
+    <section className="px-5  ">
       <div className="uppercase text-center pt-10">
         <h1 className="text-4xl">parcours</h1>
       </div>
@@ -14,6 +14,9 @@ const Timeline = () => {
           </li>
           <li className="py-5 text-2xl">
             Pellentesque laoreet arcu vitae sem condimentum elementum
+          </li>
+          <li className="py-5 text-2xl">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           </li>
         </div>
       </div>

@@ -5,7 +5,7 @@ import data from "./data.json";
 
 const Projects = () => {
   return (
-    <section className="uppercase text-center px-5">
+    <section className="uppercase text-center px-5  ">
       <div>
         <h1 className="text-4xl pt-10 pb-5">projet</h1>
       </div>

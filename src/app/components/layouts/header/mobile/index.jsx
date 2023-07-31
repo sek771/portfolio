@@ -5,12 +5,12 @@ import { styles } from "./styles";
 
 const HeaderMobile = () => {
   return (
-    <header className="flex lg:hidden">
+    <header className="flex lg:hidden ">
       <Menu styles={styles}>
         <section className="">
-          <div className="grid grid-cols-1 flex text-left text-2xl  ">
+          <div className="grid grid-cols-1 py-28 text-left text-2xl ">
             <div>
-              <img src="./mobile/logo" alt=""logo />
+              <img src="./mobile/logo/" alt="" />
             </div>
             <div className="pt-5">
               <a id="home" className="menu-item" href="#">

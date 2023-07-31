@@ -3,10 +3,8 @@ import Form from "@/app/components/tools/form";
 const Contact = () => {
   return (
     <>
-      <section className="grid grid-cols-1 text-center lg:flex lg:justify-center px-5">
-        <div className="uppercase text-4xl">
-          <h1>Contact</h1>
-        </div>
+      <section className="lg:text-center lg:flex lg:justify-center px-5">
+        <h1 className="uppercase text-center text-4xl py-5">Contact</h1>
         <Form />
       </section>
     </>

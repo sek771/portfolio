@@ -1,11 +1,11 @@
 import Main from "@/app/components/layouts/main";
-
 import Header from "@/app/home/section/header";
 import Introduction from "@/app/home/section/introduction";
 import Skills from "@/app/home/section/skills";
 import Projects from "@/app/home/section/projects";
 import Timeline from "@/app/home/section/timeline";
 import Contact from "@/app/home/section/contact";
+import ParticlesBackground from "../components/tools/particle";
 
 const Home = () => {
   return (
@@ -16,6 +16,7 @@ const Home = () => {
       <Projects />
       <Timeline />
       <Contact />
+      <ParticlesBackground />
     </Main>
   );
 };

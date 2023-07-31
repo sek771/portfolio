@@ -10,14 +10,14 @@ export let styles = {
     background: "#57BADE",
   },
   bmBurgerBarsHover: {
-    background: "#79D4F5",
+    background: "#5778FA",
   },
   bmCrossButton: {
     height: "40px",
     width: "40px",
   },
   bmCross: {
-    background: "#57BADE",
+    background: "#0A5EF0",
   },
   bmMenuWrap: {
     position: "fixed",
@@ -29,7 +29,7 @@ export let styles = {
     fontSize: "1.15em",
   },
   bmMorphShape: {
-    fill: "##62DDDE",
+    fill: "#0A5EF0",
   },
   bmItemList: {
     color: "#5778FA",

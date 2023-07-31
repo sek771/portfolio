@@ -2,12 +2,13 @@ import Header from "@/app/components/layouts/header";
 import Home from "@/app/home";
 import Footer from "@/app/components/layouts/footer";
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <>
       <Header />
-      <Home />
+       <Home />
       <Footer />
     </>
   );
-}
+};
+export default HomePage;

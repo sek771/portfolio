@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const Main = ({ className, children }) => {
-  return <main className={`bg-white ${className}`}>{children}</main>;
+  return <main className={`${className}`}>{children}</main>;
 };
 
 Main.propTypes = {

@@ -1,6 +1,6 @@
 const HeaderDesktop = () => {
   return (
-    <header>
+    <header className="bg-cyan-100">
       <div className="w-full">
         <ul className="hidden lg:flex lg:flex-row lg:justify-center lg:list-none lg:pb-10">
           <li className="mx-5">
