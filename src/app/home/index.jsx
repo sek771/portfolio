@@ -1,5 +1,5 @@
 import Main from "@/app/components/layouts/main";
-import Header from "@/app/home/section/header";
+import Header from "@/app/home/section";
 import Introduction from "@/app/home/section/introduction";
 import Skills from "@/app/home/section/skills";
 import Projects from "@/app/home/section/projects";

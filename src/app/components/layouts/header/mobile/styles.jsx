@@ -24,7 +24,7 @@ export let styles = {
     height: "100%",
   },
   bmMenu: {
-    background: "#0aface",
+    background: "#62E0FC",
     padding: "2.5em 1.5em 0",
     fontSize: "1.15em",
   },

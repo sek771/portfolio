@@ -5,9 +5,9 @@ import { styles } from "./styles";
 
 const HeaderMobile = () => {
   return (
-    <header className="flex lg:hidden ">
+    <header className="flex lg:hidden">
       <Menu styles={styles}>
-        <section className="">
+        <section className="" >
           <div className="grid grid-cols-1 py-28 text-left text-2xl ">
             <div>
               <img src="./mobile/logo/" alt="" />

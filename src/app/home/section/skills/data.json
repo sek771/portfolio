@@ -1,5 +1,6 @@
 [
   {
+    
     "id": 1,
     "img": "/competences/html.png",
     "p": "HTML"
@@ -32,6 +33,6 @@
   {
     "id": 7,
     "img": "/competences/canva.png",
-    "p": "Lorem"
+    "p": "CANVA"
   }
 ]

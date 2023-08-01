@@ -1,11 +1,11 @@
 const FooterDesktop = () => {
   return (
-    <footer className="hidden w-full bg-cyan-700 lg:grid lg:grid-rows-2 lg:justify-items-center">
+    <footer className="hidden w-full bg-cyan-700 lg:grid lg:grid-rows-2 lg:justify-items-center" >
       <div className="text-center">
         <p className="text-4xl">Copyright</p>
       </div>
       <div className="lg:flex ">
-        <div className="py-5 px-5">
+        <div className="py-5 px-5" >
           <img
             src="/footer img/linkedin.svg/"
             alt="linkedin"

@@ -2,7 +2,7 @@ import Input from "@/app/components/tools/input";
 
 const Form = () => {
   return (
-    <form action="" className=" py-20 ">
+    <form action="" className=" pb-5 ">
       <div className="px-12 py-5 lg:flex lg:justify-center">
         <div className="flex flex-col items-center pr-10 pb-5">
           <label htmlFor="">Votre prénom :</label>
