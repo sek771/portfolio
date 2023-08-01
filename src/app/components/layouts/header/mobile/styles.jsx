@@ -25,7 +25,7 @@ export let styles = {
   },
   bmMenu: {
     background: "#62E0FC",
-    padding: "2.5em 1.5em 0",
+    padding: "3em 3em 0",
     fontSize: "1.15em",
   },
   bmMorphShape: {
