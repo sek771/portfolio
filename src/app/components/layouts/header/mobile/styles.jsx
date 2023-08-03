@@ -1,10 +1,10 @@
 export let styles = {
   bmBurgerButton: {
     position: "fixed",
-    width: "45px",
-    height: "30px",
+    width: "35px",
+    height: "25px",
     left: "25px",
-    top: "25px",
+    top: "15px",
   },
   bmBurgerBars: {
     background: "#57BADE",

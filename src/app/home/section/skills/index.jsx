@@ -12,7 +12,7 @@ const Skills = () => {
       </div>
       <div
         className="grid grid-cols-3 justify-items-center py-5"
-        data-aos="flip-up"
+ 
       >
         {data.map((jutsu) => {
           return <Cardskills key={jutsu.id} img={jutsu.img} p={jutsu.p} />;

@@ -5,48 +5,51 @@ import { styles } from "./styles";
 
 const HeaderMobile = () => {
   return (
-    <header className="bg-cyan-500 flex lg:hidden " >
-      <Menu styles={styles}>
-        <section >
-          <div className="grid grid-cols-1 py-28 text-left text-2xl ">
-            <div className="pt-5">
-              <a id="home" className="menu-item" href="#">
-                Accueil
-              </a>
+    <header>
+      <div className="bg-cyan-600 w-full h-14 fixed lg:hidden">
+        <img src="/portfolio/public/logo.png" alt="" />
+        <Menu styles={styles}>
+          <section>
+            <div className="grid grid-cols-1 py-28 text-left text-2xl ">
+              <div className="pt-5">
+                <a id="home" className="menu-item" href="#">
+                  Accueil
+                </a>
+              </div>
+              <div className="pt-5">
+                <a id="about" className="menu-item" href="#">
+                  Présentation
+                </a>
+              </div>
+              <div className="pt-5">
+                <a id="contact" className="menu-item" href="#">
+                  Projets
+                </a>
+              </div>
+              <div className="pt-5">
+                <a id="home" className="menu-item" href="#">
+                  Compétences
+                </a>{" "}
+              </div>
+              <div className="pt-5">
+                <a id="home" className="menu-item" href="#">
+                  Parcours
+                </a>{" "}
+              </div>
+              <div className="pt-5">
+                <a id="home" className="menu-item" href="#">
+                  Contract
+                </a>{" "}
+              </div>
+              <div className="pt-5">
+                <a id="home" className="menu-item" href="#">
+                  CV
+                </a>
+              </div>
             </div>
-            <div className="pt-5">
-              <a id="about" className="menu-item" href="#">
-                Présentation
-              </a>
-            </div>
-            <div className="pt-5">
-              <a id="contact" className="menu-item" href="#">
-                Projets
-              </a>
-            </div>
-            <div className="pt-5">
-              <a id="home" className="menu-item" href="#">
-                Compétences
-              </a>{" "}
-            </div>
-            <div className="pt-5">
-              <a id="home" className="menu-item" href="#">
-                Parcours
-              </a>{" "}
-            </div>
-            <div className="pt-5">
-              <a id="home" className="menu-item" href="#">
-                Contract
-              </a>{" "}
-            </div>
-            <div className="pt-5">
-              <a id="home" className="menu-item" href="#">
-                CV
-              </a>
-            </div>
-          </div>
-        </section>
-      </Menu>
+          </section>
+        </Menu>
+      </div>
     </header>
   );
 };

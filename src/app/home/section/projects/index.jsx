@@ -9,8 +9,10 @@ const Projects = () => {
       <div>
         <h1 className="text-4xl pt-10 pb-5">projet</h1>
       </div>
-      <div>
-        <div className="lg:grid lg:grid-cols-4 lg:justify-items-center grid grid-cols-2 justify-items-center px-6 glass" data-aos="zoom-in-down">
+      <div >
+        
+        <div className="lg:grid lg:grid-cols-2 lg:justify-items-center grid grid-cols-1 py-6"
+         >
           {data.map((element) => {
             return (
               <Card
