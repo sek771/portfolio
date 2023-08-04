@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 const Cardskills = (props) => {
   return (
-    <div className="grid justify-items-center text-center py-24">
+    <div className="grid justify-items-center text-center py-5">
       <div className="glass-4 " data-aos={"zoom-in-down"}>
         <img
           width={125}

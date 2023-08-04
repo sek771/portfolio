@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 .glass {
-  
   background: rgba(168, 232, 242, 0.8);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0px);
@@ -11,8 +10,7 @@
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-@media (min-width: 1024px) { 
-
+@media (min-width: 1024px) {
   .glass-1 {
     background: rgba(168, 232, 242, 0.8);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -22,7 +20,6 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     width: 600px;
     height: 250px;
-    
   }
 }
 .glass-2 {
@@ -34,29 +31,30 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   width: 200px;
   height: 200px;
-
 }
-@media (min-width: 1024px){
-.glass-3 {
-  background: rgba(168, 232, 242, 0.8);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  width: 1640px;
-  height: 700px;
-}}
-
-  .glass-4 {
+@media (min-width: 1024px) {
+  .glass-3 {
     background: rgba(168, 232, 242, 0.8);
-    box-shadow: 0 8px 32px 0 rgb(25, 61, 54);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
     border-radius: 10px;
-    border: 1px solid rgba(147, 240, 8, 0.18);
-  
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 1640px;
+    height: 700px;
   }
+}
+
+.glass-4 {
+  background: rgba(168, 232, 242, 0.8);
+  box-shadow: 0 8px 32px 0 rgb(25, 61, 54);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(147, 240, 8, 0.18);
+}
+
+
   .glass-5 {
     background: rgba(168, 232, 242, 0.8);
     box-shadow: 0 8px 32px 0 rgb(26, 25, 61);
@@ -67,3 +65,4 @@
     width: 340px;
     height: 700px;
   }
+

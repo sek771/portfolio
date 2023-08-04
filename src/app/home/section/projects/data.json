@@ -2,21 +2,21 @@
   {
     "id": 1,
     "title": "projet agence web",
-    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYYL7xdJNiFKKRoigs3neLNWfzEEybBZK5YA&usqp=CAU"
+    "img": "/project img/uchiwa.png"
   },
   {
     "id": 2,
     "title": "Projet personnel",
-    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYYL7xdJNiFKKRoigs3neLNWfzEEybBZK5YA&usqp=CAU"
+    "img": "/project img/uchiwa.png"
   },
   {
     "id": 3,
-    "title": "Projet portfolio",
-    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYYL7xdJNiFKKRoigs3neLNWfzEEybBZK5YA&usqp=CAU"
+    "title": "portfolio",
+    "img": "/project img/uchiwa.png"
   },
   {
     "id": 4,
     "title": "Projet digicodes",
-    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQVTfEsAhsu6idiwjvoXKVqMDAADFo0ccRQA&usqp=CAU"
+    "img": "/project img/digicodes.png"
   }
 ]

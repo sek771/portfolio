@@ -29,7 +29,7 @@ const Form = () => {
         />
       </div>
       <div className="py-8">
-        <button className="bg-gray-500">Envoyer</button>
+        <button className="bg-cyan-900 rounded-full w-20">Envoyer</button>
       </div>
     </form>
   );
