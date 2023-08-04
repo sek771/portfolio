@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Image from 'next/image'
 
 const Card = (props) => {
   return (
@@ -7,7 +8,7 @@ const Card = (props) => {
       data-aos={"flip-up"}
       >
         <h1>{props.title}</h1>
-        <img width={100} height={50} src={props.img} alt=""  />
+        <Image width={100} height={50} src={props.img} alt=""  />
         <button onClick={props.onClick}>En savoir plus</button>
       </div>
     </section>

@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
+import Image from 'next/image'
 const Cardskills = (props) => {
   return (
     <div className="grid justify-items-center text-center py-5">
       <div className="glass-4 " data-aos={"zoom-in-down"}>
-        <img
+        <Image
           width={125}
           height={125}
           src={props.img}

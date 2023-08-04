@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const Introduction = () => {
   return (
     <>
@@ -12,7 +14,7 @@ const Introduction = () => {
           <div
             className="glass lg:mx-28 grid grid-cols-1 justify-items-center glass-3">
             <div >
-              <img
+              <Image
                 src="/introduction img/miles.png"
                 width={250}
                 height={150}
