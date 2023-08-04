@@ -11,7 +11,7 @@ const Skills = () => {
         </h2>
       </div>
       <div
-        className="grid grid-cols-3 justify-items-center py-5"
+        className="lg:grid lg:grid-cols-3 grid grid-cols-2 justify-items-center py-5"
  
       >
         {data.map((jutsu) => {
