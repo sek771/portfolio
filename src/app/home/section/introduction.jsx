@@ -29,7 +29,7 @@ const Introduction = () => {
                 développement web et web mobile ! Découvrez mes projets et
                 compétences en création de sites web. Passionné par la
                 construction de sites beaux, fonctionnels et responsive.
-                N'hésitez pas à explorer mes projets et à me contacter pour
+                N&apos;hésitez pas à explorer mes projets et à me contacter pour
                 discuter de vos idées et projets passionnants.
               </p>
             </div>

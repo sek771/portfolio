@@ -1,30 +1,33 @@
+import Image from "next/image";
+
+
+
 const FooterMobile = () => {
   return (
     <footer className=" w-full bg-cyan-600 lg:hidden">
       <div className="flex align-baseline">
         <ul>
-          <h1 className="uppercase text-xl pl-10">social</h1>
+          <h1 className="uppercase text-xl pl-5">social</h1>
         </ul>
-        
         <div className="py-5 px-5">
-          <img
+          <Image
             src="/footer img/linkedin.svg/"
             alt="linkedin"
-            width="50px"
-            height="50px"
+            width={50}
+            height={50}
           />
         </div>
         <div className="py-5 px-5">
-          <img
+          <Image
             src="/footer img/github.svg/"
             alt="github"
-            width="50px"
-            height="50px"
+            width={50}
+            height={50}
           />
         </div>
       </div>
       <div>
-      <div>
+        <div>
           <ul>
             <h1 className="uppercase pt-5 pl-10 text-xl">sékou sacko</h1>
           </ul>

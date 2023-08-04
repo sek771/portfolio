@@ -6,8 +6,10 @@ import { styles } from "./styles";
 const HeaderMobile = () => {
   return (
     <header>
-      <div className="bg-cyan-600 w-full h-14 fixed lg:hidden">
-        <img src="/portfolio/public/logo.png" alt="" />
+      <div className=" bg-cyan-600 w-full h-14 fixed lg:hidden">
+        <img src="/logo.png" alt="" width={150} height={150} />
+      </div>
+      <div>
         <Menu styles={styles}>
           <section>
             <div className="grid grid-cols-1 py-28 text-left text-2xl ">

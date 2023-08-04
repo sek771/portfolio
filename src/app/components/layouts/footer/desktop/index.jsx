@@ -1,3 +1,7 @@
+"use client"
+
+import Image from "next/image";
+
 const FooterDesktop = () => {
   return (
     <footer className="hidden w-full bg-cyan-700 lg:grid grid-rows-2 justify-items-center">
@@ -20,19 +24,19 @@ const FooterDesktop = () => {
           </ul>
           <div className="flex align-baseline">
             <div className="py-5 px-5">
-              <img
+              <Image
                 src="/footer img/linkedin.svg/"
                 alt="linkedin"
-                width="50px"
-                height="50px"
+                width={50}
+                height={50}
               />
             </div>
             <div className="py-5 px-5">
-              <img
+              <Image
                 src="/footer img/github.svg/"
                 alt="github"
-                width="50px"
-                height="50px"
+                width={50}
+                height={50}
               />
             </div>
           </div>
