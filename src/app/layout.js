@@ -7,11 +7,6 @@ import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Portfolio - Sekou Sacko",
-  description: "Bienvenue sur le portfolio de Sekou.",
-};
-
 export default function RootLayout({ children }) {
   useEffect(() => {
     AOS.init({
