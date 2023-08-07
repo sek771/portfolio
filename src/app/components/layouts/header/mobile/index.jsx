@@ -5,10 +5,7 @@ import { styles } from "./styles";
 
 const HeaderMobile = () => {
   return (
-    <header>
-      <div className=" bg-cyan-600 w-full h-14 fixed lg:hidden">
-        <img src="/logo.png" alt="" width={150} height={150} />
-      </div>
+    <header className="lg:hidden">
       <div>
         <Menu styles={styles}>
           <section>

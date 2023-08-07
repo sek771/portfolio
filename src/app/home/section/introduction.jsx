@@ -3,7 +3,7 @@ import Image from 'next/image'
 const Introduction = () => {
   return (
     <>
-      <section className=" grid grid-cols-1 justify-items-center px-5 ">
+      <section className=" grid grid-cols-1 justify-items-center px-5  ">
         <div>
           <div>
             <h2 className="uppercase mt-5 text-center text-4xl lg:pb-24">
@@ -12,14 +12,15 @@ const Introduction = () => {
           </div>
           
           <div
-            className="glass lg:mx-28 grid grid-cols-1 justify-items-center glass-3">
+            className="glass lg:ml-36 lg:w-4/5 grid grid-cols-1 justify-items-center"
+            data-aos="flip-left">
             <div >
               <Image
                 src="/introduction img/miles.png"
                 width={250}
                 height={150}
                 alt="Picture of the author"
-                className="py-5 lg:pt-24"
+                className="py-5 lg:pt-24 mb-10"
               />
             </div>
 

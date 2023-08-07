@@ -3,8 +3,8 @@ export let styles = {
     position: "fixed",
     width: "35px",
     height: "25px",
-    left: "25px",
-    top: "15px",
+    left: "15px",
+    top: "8px",
   },
   bmBurgerBars: {
     background: "#57BADE",
@@ -13,8 +13,8 @@ export let styles = {
     background: "#5778FA",
   },
   bmCrossButton: {
-    height: "40px",
-    width: "40px",
+    height: "20px",
+    width: "20px",
   },
   bmCross: {
     background: "#0A5EF0",

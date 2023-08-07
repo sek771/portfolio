@@ -10,7 +10,7 @@ const FooterMobile = () => {
           <h1 className="uppercase text-xl pl-5">social</h1>
         </ul>
         <div className="py-5 px-5">
-          <Image
+          <img
             src="/footer img/linkedin.svg/"
             alt="linkedin"
             width={50}
@@ -18,7 +18,7 @@ const FooterMobile = () => {
           />
         </div>
         <div className="py-5 px-5">
-          <Image
+          <img
             src="/footer img/github.svg/"
             alt="github"
             width={50}

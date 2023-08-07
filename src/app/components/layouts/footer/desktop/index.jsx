@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const FooterDesktop = () => {
   return (
-    <footer className="hidden w-full bg-cyan-700 lg:grid grid-rows-2 justify-items-center">
+    <footer className="hidden w-full bg-cyan-600 lg:grid grid-rows-2 justify-items-center">
       <section className="grid grid-cols-2">
         <div>
           {" "}
@@ -24,7 +24,7 @@ const FooterDesktop = () => {
           </ul>
           <div className="flex align-baseline">
             <div className="py-5 px-5">
-              <Image
+              <img
                 src="/footer img/linkedin.svg/"
                 alt="linkedin"
                 width={50}
@@ -32,7 +32,7 @@ const FooterDesktop = () => {
               />
             </div>
             <div className="py-5 px-5">
-              <Image
+              <img
                 src="/footer img/github.svg/"
                 alt="github"
                 width={50}

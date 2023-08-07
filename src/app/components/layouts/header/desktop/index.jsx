@@ -1,8 +1,11 @@
 const HeaderDesktop = () => {
   return (
-    <header className="bg-cyan-100">
+    <header className="bg-cyan-600 ">
+      <div className="grid justify-items-center py-2">
+        <img src="/logo.png" alt="" width={150} className=""/>
+      </div>
       <div className="w-full">
-        <ul className="hidden lg:flex lg:flex-row lg:justify-center lg:list-none lg:py-5">
+        <ul className="hidden lg:flex lg:flex-row lg:justify-center lg:list-none">
           <li className="mx-5">
             <a href="#">Accueil</a>
           </li>

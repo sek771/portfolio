@@ -7,16 +7,15 @@ const Projects = () => {
   return (
     <section className="uppercase text-center px-5  ">
       <div>
-        <h1 className="text-4xl pt-10 pb-5">projet</h1>
+        <h1 className="text-4xl pt-10 pb-5" >
+          projet
+        </h1>
       </div>
-      <div >
-        
-        <div className="lg:grid lg:grid-cols-2 lg:justify-items-center grid grid-cols-1 py-6"
-         >
+      <div>
+        <div className="lg:grid lg:grid-cols-2 lg:justify-items-center grid grid-cols-1 py-6">
           {data.map((element) => {
             return (
               <Card
-              
                 key={element.id}
                 title={element.title}
                 img={element.img}

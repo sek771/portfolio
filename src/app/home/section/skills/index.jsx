@@ -5,8 +5,8 @@ import data from "./data.json";
 const Skills = () => {
   return (
     <section className="px-5 ">
-      <div>
-        <h2 className="uppercase pt-10 mx-10 text-4xl text-center ">
+      <div className="py-16">
+        <h2 className="uppercase pt-10 mx-10 text-4xl text-center">
           competences
         </h2>
       </div>

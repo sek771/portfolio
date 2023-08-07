@@ -3,7 +3,7 @@ import Image from 'next/image'
 const Cardskills = (props) => {
   return (
     <div className="grid justify-items-center text-center py-5">
-      <div className="glass-4 " data-aos={"zoom-in-down"}>
+      <div className="glass-1 grid justify-items-center" data-aos={"zoom-in-down"}>
         <Image
           width={125}
           height={125}
@@ -12,7 +12,7 @@ const Cardskills = (props) => {
           className="py-2 px-2 grid"
         />
 
-        <p className="text-2xl lg:text-4xl lg:py-2">{props.p}</p>
+        <p className="text-2xl lg:text-3xl lg:py-2">{props.p}</p>
       </div>
     </div>
   );
