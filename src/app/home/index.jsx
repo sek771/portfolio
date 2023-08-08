@@ -7,6 +7,9 @@ import Timeline from "@/app/home/section/timeline";
 import Contact from "@/app/home/section/contact";
 import ParticlesBackground from "../components/tools/particle";
 
+
+
+
 const Home = () => {
   return (
     <Main>
@@ -17,6 +20,7 @@ const Home = () => {
       <Timeline />
       <Contact />
       <ParticlesBackground />
+  
     </Main>
   );
 };

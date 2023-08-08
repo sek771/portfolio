@@ -28,7 +28,7 @@ const Form = () => {
           placeholder="Objet du message"
         />
       </div>
-      <div className="py-8">
+      <div className="py-8 grid justify-items-center">
         <button className="bg-cyan-900 rounded-full w-20">Envoyer</button>
       </div>
     </form>
