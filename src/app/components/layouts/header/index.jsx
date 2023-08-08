@@ -5,6 +5,7 @@ const Header = () => {
   return (
     <>
       <HeaderDesktop />
+
       <div className="lg:hidden">
         <HeaderMobile />
       </div>

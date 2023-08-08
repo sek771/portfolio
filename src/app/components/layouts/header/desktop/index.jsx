@@ -1,33 +1,29 @@
+"use client";
+
+import React from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
 const HeaderDesktop = () => {
   return (
-    <header className="bg-cyan-600 ">
-      <div className="grid justify-items-center py-2">
-        <img src="/logo.png" alt="" width={150} className=""/>
-      </div>
-      <div className="w-full">
-        <ul className="hidden lg:flex lg:flex-row lg:justify-center lg:list-none">
-          <li className="mx-5">
-            <a href="#">Accueil</a>
-          </li>
-          <li className="mx-5">
-            <a href="#">Présentation</a>
-          </li>
-          <li className="mx-5">
-            <a href="#">Projets</a>
-          </li>
-          <li className="mx-5">
-            <a href="#">Compétences</a>
-          </li>
-          <li className="mx-5">
-            <a href="#">Parcours</a>
-          </li>
-          <li className="mx-5">
-            <a href="#">Contact</a>
-          </li>
-          <li>
-            <a href="#">CV</a>
-          </li>
-        </ul>
+    <header>
+      <div className="hidden lg:list-none lg:flex lg:items-center lg:justify-center lg:mb-5 lg:w-full lg:h-12 bg-cyan-800">
+        
+          <AnchorLink href="#Présentation" className="mx-5 my-10">
+            Présentation
+          </AnchorLink>
+          <AnchorLink href="#Compétences" className="mx-5 my-10">
+            Compétences
+          </AnchorLink>
+          <AnchorLink href="#Projet" className="mx-5 my-10">
+            Projet
+          </AnchorLink>
+          <AnchorLink href="#Parcours" className="mx-5 my-10">
+            Parcours
+          </AnchorLink>
+          <AnchorLink href="#Contact" className="mx-5 my-10">
+            Contact
+          </AnchorLink>
+        
       </div>
     </header>
   );

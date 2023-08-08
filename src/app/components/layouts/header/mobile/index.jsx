@@ -2,48 +2,40 @@
 
 import { slide as Menu } from "react-burger-menu";
 import { styles } from "./styles";
+import React from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const HeaderMobile = () => {
   return (
-    <header className="lg:hidden">
+    <header className="lg:hidden ">
       <div>
         <Menu styles={styles}>
           <section>
             <div className="grid grid-cols-1 py-28 text-left text-2xl ">
-              <div className="pt-5">
-                <a id="home" className="menu-item" href="#">
-                  Accueil
-                </a>
-              </div>
-              <div className="pt-5">
-                <a id="about" className="menu-item" href="#">
+              <div>
+                <AnchorLink href="#Présentation" className="mx-5 my-10">
                   Présentation
-                </a>
+                </AnchorLink>
               </div>
-              <div className="pt-5">
-                <a id="contact" className="menu-item" href="#">
-                  Projets
-                </a>
-              </div>
-              <div className="pt-5">
-                <a id="home" className="menu-item" href="#">
+              <div>
+                <AnchorLink href="#Compétences" className="mx-5 my-10">
                   Compétences
-                </a>{" "}
+                </AnchorLink>
               </div>
-              <div className="pt-5">
-                <a id="home" className="menu-item" href="#">
+              <div>
+                <AnchorLink href="#Projet" className="mx-5 my-10">
+                  Projet
+                </AnchorLink>
+              </div>
+              <div>
+                <AnchorLink href="#Parcours" className="mx-5 my-10">
                   Parcours
-                </a>{" "}
+                </AnchorLink>
               </div>
-              <div className="pt-5">
-                <a id="home" className="menu-item" href="#">
-                  Contract
-                </a>{" "}
-              </div>
-              <div className="pt-5">
-                <a id="home" className="menu-item" href="#">
-                  CV
-                </a>
+              <div>
+                <AnchorLink href="#Contact" className="mx-5 my-10">
+                  Contact
+                </AnchorLink>
               </div>
             </div>
           </section>

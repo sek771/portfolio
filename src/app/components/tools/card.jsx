@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 const Card = (props) => {
   return (
-    <section className=" py-6">
-      <div className="py-6 glass grid justify-items-center glass-2"
+    <section className="my-16">
+      <div className="h-100% glass grid justify-items-center glass-2"
       data-aos={"flip-up"}
       >
         <h1>{props.title}</h1>

@@ -44,6 +44,7 @@ const FooterDesktop = () => {
       </section>
       <div>
         <p>© Copyright 2023. Made by Sékou Sacko</p>
+        <p>Tél:(+33) 7 81 66 40 53</p>
       </div>
     </footer>
   );

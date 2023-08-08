@@ -1,20 +1,24 @@
-import Image from 'next/image'
+"use client";
+
+import Image from "next/image";
+import IntroAnimation from "@/app/components/tools/animation/introduction";
 
 const Introduction = () => {
   return (
     <>
-      <section className=" grid grid-cols-1 justify-items-center px-5  ">
-        <div>
+      <section className=" grid grid-cols-1 justify-items-center" id="Présentation">
+        <div className="grid justify-items-center">
           <div>
             <h2 className="uppercase mt-5 text-center text-4xl lg:pb-24">
               presentation
             </h2>
           </div>
-          
+
           <div
-            className="glass lg:ml-36 lg:w-4/5 grid grid-cols-1 justify-items-center"
-            data-aos="flip-left">
-            <div >
+            className="glass lg: lg:w-3/5 grid grid-cols-1 justify-items-center"
+            data-aos="flip-left"
+          >
+            <div>
               <Image
                 src="/introduction img/miles.png"
                 width={250}
@@ -25,14 +29,9 @@ const Introduction = () => {
             </div>
 
             <div className="lg:grid lg:justify-items-center">
-              <p className=" text-3xl text-center lg:px-40 pb-5 mx-4 lg:grid lg:justify-items-center">
-                Bonjour, je suis SEKOU SACKO, bienvenue sur mon portfolio en
-                développement web et web mobile ! Découvrez mes projets et
-                compétences en création de sites web. Passionné par la
-                construction de sites beaux, fonctionnels et responsive.
-                N&apos;hésitez pas à explorer mes projets et à me contacter pour
-                discuter de vos idées et projets passionnants.
-              </p>
+              <div >
+                <IntroAnimation/>
+              </div>
             </div>
           </div>
         </div>

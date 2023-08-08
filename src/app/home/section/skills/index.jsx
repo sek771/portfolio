@@ -4,7 +4,7 @@ import Cardskills from "@/app/components/tools/cardskills";
 import data from "./data.json";
 const Skills = () => {
   return (
-    <section className="px-5 ">
+    <section className="px-5 " id="Compétences">
       <div className="py-16">
         <h2 className="uppercase pt-10 mx-10 text-4xl text-center">
           competences

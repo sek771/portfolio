@@ -1,6 +1,6 @@
 const Timeline = () => {
   return (
-    <section className="px-5 lg:px-72 ">
+    <section className="px-5 lg:px-72 " id="Parcours">
       <div className="uppercase text-center pt-10 glass-titles py-14">
         <h1 className="text-4xl">parcours</h1>
       </div>
