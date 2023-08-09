@@ -12,8 +12,8 @@ const Contact = () => {
         className="lg:text-center lg:flex lg:justify-center px-5"
         id="Contact"
       >
-        <div>
-          <h1 className="uppercase text-center text-4xl py-5">
+        <div className="mt-8">
+          <h1 className="uppercase text-center text-4xl pb-8">
             {" "}
             <LinearTextGradient
               angle={20}

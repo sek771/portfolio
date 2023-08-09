@@ -1,8 +1,8 @@
 "use client";
 
 import Particles from "react-tsparticles";
-import { useCallback, useEffect, useState } from "react";
-import options from "./particles.json";
+import { useCallback } from "react";
+import { options } from "./particles.jsx";
 import { loadFull } from "tsparticles";
 
 const ParticlesBackground = () => {

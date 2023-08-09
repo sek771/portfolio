@@ -2,8 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Klein";
+  src: url("../fonts/klein/Klein-Text-Book-trial.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Klein-italic";
+  src: url("../fonts/klein/Klein-ExtraLight-Italic-trial.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Aileron";
+  src: url("../fonts/aileron/Aileron-Regular.otf") format("opentype");
+}
+
 .glass {
-  background: rgba(28, 210, 245, 0.5);
+  background: rgba(28, 210, 245, 0.502);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -18,7 +33,6 @@
   -webkit-backdrop-filter: blur(3px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  width: 150px;
 }
 
 .glass-2 {
@@ -28,5 +42,4 @@
   -webkit-backdrop-filter: blur(3px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  width: 350px;
 }

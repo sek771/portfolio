@@ -3,8 +3,8 @@ export let styles = {
     position: "fixed",
     width: "35px",
     height: "25px",
-    left: "15px",
-    top: "8px",
+    left: "20px",
+    top: "30px",
   },
   bmBurgerBars: {
     background: "#57BADE",
@@ -22,10 +22,10 @@ export let styles = {
   bmMenuWrap: {
     position: "fixed",
     height: "100%",
+    width: "100%",
   },
   bmMenu: {
     background: "#62E0FC",
-    padding: "3em 3em 0",
     fontSize: "1.15em",
   },
   bmMorphShape: {
@@ -36,9 +36,10 @@ export let styles = {
     padding: "0.8em",
   },
   bmItem: {
-    display: "inline-block",
+    display: "",
+    height: "100vh",
   },
   bmOverlay: {
-    background: "#57BADE",
+    background: "transparent",
   },
 };

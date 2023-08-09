@@ -2,22 +2,22 @@ import Input from "@/app/components/tools/input";
 
 const Form = () => {
   return (
-    <form action="" className=" pb-5 lg:grid lg:grid-cols-1 ">
-      <div className="px-12 py-5 lg:grid lg:justify-items-center">
-        <div className="flex flex-col items-center pr-10 pb-5">
+    <form action="" className="glass mb-12 pb-2 lg:grid lg:grid-cols-1 ">
+      <div className="lg:grid lg:justify-items-center">
+        <div className="flex flex-col items-center pt-4">
           <label htmlFor="">Votre prénom :</label>
           <Input type="text" placeholder="Prénom" />
         </div>
-        <div className="flex flex-col items-center pr-10 pb-5">
+        <div className="flex flex-col items-center py-4">
           <label htmlFor="">Votre Nom :</label>
           <Input type="text" placeholder="Nom" />
         </div>
-        <div className="flex flex-col items-center pr-10">
+        <div className="flex flex-col items-center">
           <label htmlFor="">Votre Email :</label>
           <Input type="email" placeholder="E-mail" />
         </div>
       </div>
-      <div className="">
+      <div className="flex flex-col items-center py-4 mx-6">
         <label htmlFor="">Objet du message :</label>
         <textarea
           name=""

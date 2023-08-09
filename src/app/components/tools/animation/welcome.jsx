@@ -1,30 +1,31 @@
-import { TypeAnimation } from 'react-type-animation';
- 
+import { TypeAnimation } from "react-type-animation";
+
 const Animation = () => {
   return (
     <TypeAnimation
       sequence={[
-        'bonjour', // Types 'One'
+        "bonjour", // Types 'One'
         1500, // Waits 1s
-        'je suis', // Deletes 'One' and types 'Two'
+        "je suis", // Deletes 'One' and types 'Two'
         100, // Waits 2s
-        'sékou', // Types 'Three' without deleting 'Two'
+        "sékou", // Types 'Three' without deleting 'Two'
         1500,
-        'votre',
+        "votre",
         1500,
-        'dev web',
+        "dev web",
         1500,
 
         () => {
-          console.log('Sequence completed');
+          console.log("Sequence completed");
         },
       ]}
       wrapper="span"
       cursor={true}
       repeat={Infinity}
-      style={{ fontSize: '2em', display: 'inline-block' }}
+      style={{ fontSize: "2em", display: "inline-block", color: "red" }}
+      className="font-aileron text-red-500"
     />
   );
 };
 
-export default Animation
+export default Animation;

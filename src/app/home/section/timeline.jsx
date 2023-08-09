@@ -9,7 +9,7 @@ import {
 const Timeline = () => {
   return (
     <section className="px-5 lg:px-72 " id="Parcours">
-      <div className="uppercase text-center pt-10 glass-titles py-14">
+      <div className="uppercase text-center my-8 glass-titles">
         <h1 className="text-4xl">
           <LinearTextGradient
             angle={20}

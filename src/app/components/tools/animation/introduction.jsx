@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const IntroAnimation = () => {
   return (
-    <div className="mx-24 my-24">
+    <div className="font-aileron mx-24 my-24">
         <TypeAnimation
           sequence={[
             "Bonjour, je suis SEKOU SACKO",
