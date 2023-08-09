@@ -6,25 +6,45 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 const HeaderDesktop = () => {
   return (
     <header>
-      <div className="hidden lg:list-none lg:flex lg:items-center lg:justify-center lg:mb-5 lg:w-full lg:h-12 bg-cyan-800">
-        
-          <AnchorLink href="#Présentation" className="mx-5 my-10">
-            Présentation
-          </AnchorLink>
-          <AnchorLink href="#Compétences" className="mx-5 my-10">
-            Compétences
-          </AnchorLink>
-          <AnchorLink href="#Projet" className="mx-5 my-10">
-            Projet
-          </AnchorLink>
-          <AnchorLink href="#Parcours" className="mx-5 my-10">
-            Parcours
-          </AnchorLink>
-          <AnchorLink href="#Contact" className="mx-5 my-10">
-            Contact
-          </AnchorLink>
-        
-      </div>
+      <nav className="hidden w-full lg:flex fixed top-0 z-50 flex-col bg-cyan-800">
+        <div className="flex justify-center py-4">
+          <a href="http://localhost:3000">
+            <img src="/logo/logo.png" alt="" width={75} height={75} />
+          </a>
+        </div>
+        <div className="flex flex-row justify-around">
+          <ul className="font-klein flex flex-row uppercase py-4">
+            <li className="">
+              <a href="http://localhost:3000">Accueil</a>
+            </li>
+            <li className="px-8">
+              <AnchorLink href="#Présentation" offset={() => 100}>
+                Présentation
+              </AnchorLink>
+            </li>
+            <li className="">
+              <AnchorLink href="#Compétences" offset={() => 100}>
+                Compétences
+              </AnchorLink>
+            </li>
+            <li className="px-8">
+              <AnchorLink href="#Projet" offset={() => 100}>
+                Projets
+              </AnchorLink>
+            </li>
+            <li className="">
+              <AnchorLink href="#Parcours" offset={() => 100}>
+                Parcours
+              </AnchorLink>
+            </li>
+            <li className="pl-8">
+              <AnchorLink href="#Contact" offset={() => 100}>
+                Contact
+              </AnchorLink>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
   );
 };

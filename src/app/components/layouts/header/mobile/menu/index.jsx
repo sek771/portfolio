@@ -55,7 +55,7 @@ const MenuNav = () => {
               offset={() => 100}
               onClick={() => HideMenu()}
             >
-              Projet
+              Projets
             </AnchorLink>
           </li>
           <li className="">

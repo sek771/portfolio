@@ -3,15 +3,15 @@ import Image from 'next/image'
 
 const Card = (props) => {
   return (
-    <section className="my-4">
-      <div className="glass grid justify-items-center glass-2"
+    <div className="my-4 lg:w-[300px]">
+      <div className="glass grid justify-items-center glass-2 lg:p-12"
       // data-aos={"flip-up"}
       >
-        <h1>{props.title}</h1>
-        <Image width={100} height={50} src={props.img} alt=""  />
+        <h1 className="">{props.title}</h1>
+        <Image width={100} height={50} src={props.img} alt="" className="lg:py-8"  />
         <button onClick={props.onClick}>En savoir plus</button>
       </div>
-    </section>
+    </div>
   );
 };
 

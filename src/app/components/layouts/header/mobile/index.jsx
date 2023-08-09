@@ -3,7 +3,7 @@ import MenuNav from "./menu";
 const HeaderMobile = () => {
   return (
     <header className="lg:hidden">
-      <nav className="fixed top-0 z-50 bg-black w-full grid grid-cols-3">
+      <nav className="fixed top-0 z-50 bg-cyan-800 w-full grid grid-cols-3">
         <div>
           <MenuNav />
         </div>

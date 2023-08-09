@@ -9,7 +9,7 @@ import ParticlesBackground from "../components/tools/particle";
 
 const Home = () => {
   return (
-    <Main>
+    <Main className="bg-slate-800">
       <Header />
       <Introduction />
       <Skills />

@@ -27,27 +27,47 @@ const Introduction = () => {
             </h2>
           </div>
           <div
-            className="glass lg: lg:w-3/5 grid grid-cols-1 justify-items-center"
-            data-aos="flip-left"
+            className="glass lg:w-1/2 lg:grid lg:grid-cols-2"
+            // data-aos="flip-left"
           >
-            <div>
+            <div className="flex justify-center">
               <Image
                 src="/introduction img/miles.png"
                 width={150}
                 height={150}
                 alt="Picture of the author"
-                className="rounded-full py-6 lg:pt-24"
+                className="rounded-full py-6 lg:p-8"
               />
             </div>
             <div className="font-aileron py-6 px-4 lg:grid lg:justify-items-center">
               <p>
-                Bonjour, je suis SEKOU SACKO, bienvenue sur mon portfolio en
-                développement web et web mobile ! Découvrez mes projets et
-                compétences en création de sites web. Passionné par la
-                construction de sites beaux, fonctionnels et responsive.
-                N&apos;hésitez pas à explorer mes projets et à me contacter pour
-                discuter de vos idées et projets passionnants.
+                Bienvenue sur mon portfolio en développement web et web mobile !{" "}
               </p>
+
+              <p>
+                Je suis passionné par la création d'expériences en ligne, et ce
+                portfolio est l'endroit idéal pour découvrir mes projets et mes
+                compétences en développement.
+              </p>
+              <p>
+                Au fil des mois, j'ai acquis une expertise dans les langages de
+                programmation tels que HTML, CSS, JavaScript, ainsi que dans les
+                frameworks et bibliothèque tel que React. Mon objectif est de
+                concevoir des sites web et des applications qui allient beauté,
+                fonctionnalité et convivialité pour les utilisateurs.
+              </p>
+              <p>
+                Dans ce portfolio, vous trouverez des exemples de projets variés
+                sur lesquels j'ai travaillé, allant de sites web réactifs et
+                intuitifs à des applications web mobiles optimisées.
+              </p>
+              <p>
+                N'hésitez pas à explorer les différents projets et à me
+                contacter si vous souhaitez en savoir plus sur mon parcours
+                professionnel ou si vous avez des projets passionnants sur
+                lesquels vous aimeriez que je travaille.
+              </p>
+              <p>Je vous remercie de visiter mon portfolio,</p>
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ const Cardskills = (props) => {
           className="py-2 px-2 grid"
         />
 
-        <h2 className="text-2xl lg:text-3xl lg:py-2">{props.p}</h2>
+        <h2 className="italic py-2">{props.p}</h2>
       </div>
     </div>
   );

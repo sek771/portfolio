@@ -1,50 +1,84 @@
-"use client"
+"use client";
 
-import Image from "next/image";
+import { TbFileCv } from "react-icons/tb";
+import { FiGithub } from "react-icons/fi";
+import { LuLinkedin } from "react-icons/lu"
+import { MdOutlinePhoneIphone } from "react-icons/md"
+import { MdOutlineEmail } from "react-icons/md"
+import { GiPositionMarker } from "react-icons/gi"
+
 
 const FooterDesktop = () => {
   return (
-    <footer className="hidden w-full bg-cyan-600 lg:grid grid-rows-2 justify-items-center">
-      <section className="grid grid-cols-2">
-        <div>
-          {" "}
-          <ul>
-            <h1 className="uppercase py-5 pl-10 text-3xl">sékou sacko</h1>
-          </ul>
-          <p className="px-5 mx-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            iusto possimus neque rerum magni quisquam odit impedit nostrum
-            corrupti molestias. Ducimus quas natus voluptatibus eaque voluptatem
-            modi commodi quaerat rerum.
-          </p>
+    <footer className="hidden lg:flex lg:flex-col w-full bg-cyan-800">
+      <div className="grid grid-cols-3">
+        <div className="flex flex-col items-center justify-center pt-8">
+          <a href="http://localhost:3000/">
+            <img src="/logo/logo.png" alt="" width={150} height={150} />
+          </a>
+          <p className="font-aileron">Made by Sekou </p>
         </div>
-        <div className="pl-96">
-          <ul>
-            <h1 className="py-5 pl-5 text-3xl">SOCIAL</h1>
+        <div className="flex flex-col items-center justify-center pt-8">
+          <ul className="font-aileron">
+            <li>
+              <p className="inline-flex">
+                <MdOutlineEmail size={25} />
+                <a href="mailto:contact@sacko-portfolio.fr" className="pl-2">
+                  contact@sacko-portfolio.fr
+                </a>
+              </p>
+            </li>
+            <li className="py-4">
+              <p className="inline-flex">
+                <MdOutlinePhoneIphone size={25} />
+                <a href="tel:07 81 66 40 53" className="pl-2">
+                  07 81 66 40 53
+                </a>
+              </p>
+            </li>
+            <li>
+              <p className="inline-flex">
+                <GiPositionMarker size={25} />
+                <a
+                  href="https://www.google.com/search?q=meaux"
+                  className="pl-2"
+                >
+                  Meaux (77100)
+                </a>
+              </p>
+            </li>
           </ul>
-          <div className="flex align-baseline">
-            <div className="py-5 px-5">
-              <img
-                src="/footer img/linkedin.svg/"
-                alt="linkedin"
-                width={50}
-                height={50}
-              />
-            </div>
-            <div className="py-5 px-5">
-              <img
-                src="/footer img/github.svg/"
-                alt="github"
-                width={50}
-                height={50}
-              />
-            </div>
+        </div>
+        <div className="pt-8 flex flex-col justify-center items-center">
+          <div className="">
+            <p className="inline-flex">
+              <FiGithub size={25} />
+              <a href="https://github.com/sek771" className="pl-2">
+                github
+              </a>
+            </p>
+          </div>
+          <div className="py-4">
+            <p className="inline-flex">
+              <LuLinkedin size={25} />
+              <a href="https://fr.linkedin.com/in/sekou-sacko-a93b1227a" className="pl-2">
+                linkedin
+              </a>
+            </p>
+          </div>
+          <div className="">
+            <p className="inline-flex">
+              <TbFileCv size={25} />
+              <a href="sacko-portfolio/docs/cv.pdf" className="pl-2">
+                @Sekou
+              </a>
+            </p>
           </div>
         </div>
-      </section>
-      <div>
-        <p>© Copyright 2023. Made by Sékou Sacko</p>
-        <p>Tél:(+33) 7 81 66 40 53</p>
+      </div>
+      <div className="flex flex-col items-center py-2 font-aileron">
+        <p>&copy; Tous droits réservés</p>
+        <p>2023 - {new Date().getFullYear()}</p>
       </div>
     </footer>
   );

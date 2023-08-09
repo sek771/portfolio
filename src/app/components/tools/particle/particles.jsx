@@ -16,7 +16,7 @@ export const options = {
     },
   },
   particles: {
-    color: { value: "#ffffff" },
+    color: { value: "#33322C" },
     line_linked: {
       color: "#ffffff",
       distance: 150,
