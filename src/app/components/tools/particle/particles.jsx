@@ -1,7 +1,6 @@
 export const options = {
   fps_limit: 60,
   interactivity: {
-    detect_on: "canvas",
     events: {
       onclick: { enable: true, mode: "push" },
       onhover: {

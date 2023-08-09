@@ -16,7 +16,7 @@ const Home = () => {
       <Projects />
       <Timeline />
       <Contact />
-      {/* <ParticlesBackground /> */}
+      <ParticlesBackground />
     </Main>
   );
 };
