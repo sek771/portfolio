@@ -13,8 +13,8 @@ const FooterDesktop = () => {
     <footer className="hidden lg:flex lg:flex-col w-full bg-cyan-800">
       <div className="grid grid-cols-3">
         <div className="flex flex-col items-center justify-center pt-8">
-          <a href="http://localhost:3000/">
-            <img src="/logo/logo.png" alt="" width={150} height={150} />
+          <a href="http://sacko-portfolio.fr/">
+            <img src="/logo/logo.png" alt="" width={200} height={200} />
           </a>
           <p className="font-aileron">Made by Sekou </p>
         </div>
@@ -69,7 +69,7 @@ const FooterDesktop = () => {
           <div className="">
             <p className="inline-flex">
               <TbFileCv size={25} />
-              <a href="sacko-portfolio/docs/cv.pdf" className="pl-2">
+              <a href="https://sacko-portfolio.fr/docs/cv.pdf" className="pl-2">
                 @Sekou
               </a>
             </p>

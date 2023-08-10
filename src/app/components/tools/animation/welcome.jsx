@@ -23,7 +23,7 @@ const Animation = () => {
       cursor={true}
       repeat={Infinity}
       style={{ fontSize: "2em", display: "inline-block", color: "red" }}
-      className="font-aileron text-red-500"
+      className="font-aileron text-yellow-600"
     />
   );
 };

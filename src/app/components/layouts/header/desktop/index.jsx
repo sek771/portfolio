@@ -8,14 +8,14 @@ const HeaderDesktop = () => {
     <header>
       <nav className="hidden w-full lg:flex fixed top-0 z-50 flex-col bg-cyan-800">
         <div className="flex justify-center py-4">
-          <a href="http://localhost:3000">
-            <img src="/logo/logo.png" alt="" width={75} height={75} />
+          <a href="http://sacko-portfolio.fr">
+            <img src="/logo/logo.png" alt="" width={125} height={125} />
           </a>
         </div>
         <div className="flex flex-row justify-around">
           <ul className="font-klein flex flex-row uppercase py-4">
             <li className="">
-              <a href="http://localhost:3000">Accueil</a>
+              <a href="http://sacko-portfolio.fr">Accueil</a>
             </li>
             <li className="px-8">
               <AnchorLink href="#Présentation" offset={() => 100}>

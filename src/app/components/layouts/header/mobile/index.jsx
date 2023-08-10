@@ -9,7 +9,7 @@ const HeaderMobile = () => {
         </div>
         <div className="flex items-center justify-center col-span-2 py-4">
           <a href="http://localhost:3000">
-            <img src="/logo/logo.png" alt="" width={50} height={50} />
+            <img src="/logo/logo.png" alt="" width={100} height={100} />
           </a>
         </div>
       </nav>

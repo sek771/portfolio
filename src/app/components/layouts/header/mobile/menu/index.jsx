@@ -1,5 +1,8 @@
 "use client";
 
+import { TbFileCv } from "react-icons/tb";
+import { FiGithub } from "react-icons/fi";
+import { LuLinkedin } from "react-icons/lu"
 import { slide as Menu } from "react-burger-menu";
 import { styles } from "./styles";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -19,7 +22,7 @@ const MenuNav = () => {
       <div className="">
         <div className="font-aileron flex flex-col items-center pt-10 pb-20">
           <a href="http://localhost:3000">
-            <img src="/logo/logo.png" alt="" width={100} height={100} />
+            <img src="/logo/logo.png" alt="" width={150} height={150} />
           </a>
           <h1>
             Seckou <span className="font-bold uppercase">Sacko</span>
@@ -79,18 +82,27 @@ const MenuNav = () => {
         </ul>
         <div className="pt-52 grid grid-cols-3">
           <div className="flex justify-center items-center">
-            <a href="">
-              <SiFacebook size={35} />
+            <a
+              href="https://github.com/sek771"
+              className="flex justify-center items-center"
+            >
+              <FiGithub size={25} />
             </a>
           </div>
           <div className="flex justify-center items-center">
-            <a href="">
-              <SiFacebook size={35} />
+            <a
+              href="https://fr.linkedin.com/in/sekou-sacko-a93b1227a"
+              className="flex justify-center items-center"
+            >
+              <LuLinkedin size={25} />
             </a>
           </div>
           <div className="flex justify-center items-center">
-            <a href="">
-              <SiFacebook size={35} />
+            <a
+              href="sacko-portfolio/docs/cv.pdf"
+              className="flex justify-center items-center"
+            >
+              <TbFileCv size={25} />
             </a>
           </div>
         </div>
