@@ -45,12 +45,12 @@ const Introduction = () => {
               </p>
 
               <p>
-                Je suis passionné par la création d'expériences en ligne, et ce
-                portfolio est l'endroit idéal pour découvrir mes projets et mes
+                Je suis passionné par la création d&apos;expériences en ligne, et ce
+                portfolio est l&apos;endroit idéal pour découvrir mes projets et mes
                 compétences en développement.
               </p>
               <p>
-                Au fil des mois, j'ai acquis une expertise dans les langages de
+                Au fil des mois, j&apos;ai acquis une expertise dans les langages de
                 programmation tels que HTML, CSS, JavaScript, ainsi que dans les
                 frameworks et bibliothèque tel que React. Mon objectif est de
                 concevoir des sites web et des applications qui allient beauté,
@@ -58,11 +58,11 @@ const Introduction = () => {
               </p>
               <p>
                 Dans ce portfolio, vous trouverez des exemples de projets variés
-                sur lesquels j'ai travaillé, allant de sites web réactifs et
+                sur lesquels j&apos;ai travaillé, allant de sites web réactifs et
                 intuitifs à des applications web mobiles optimisées.
               </p>
               <p>
-                N'hésitez pas à explorer les différents projets et à me
+                N&apos;hésitez pas à explorer les différents projets et à me
                 contacter si vous souhaitez en savoir plus sur mon parcours
                 professionnel ou si vous avez des projets passionnants sur
                 lesquels vous aimeriez que je travaille.
