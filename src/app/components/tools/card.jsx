@@ -5,7 +5,7 @@ const Card = (props) => {
   return (
     <div className="my-4 lg:w-[300px]">
       <div className="glass grid justify-items-center glass-2 lg:p-12"
-      // data-aos={"flip-up"}
+      data-aos={"flip-up"}
       >
         <h1 className="">{props.title}</h1>
         <Image width={100} height={50} src={props.img} alt="" className="lg:py-8"  />

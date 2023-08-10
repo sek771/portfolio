@@ -28,7 +28,7 @@ const Introduction = () => {
           </div>
           <div
             className="glass lg:w-1/2 lg:grid lg:grid-cols-2"
-            // data-aos="flip-left"
+            data-aos="flip-left"
           >
             <div className="flex justify-center">
               <Image

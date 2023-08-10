@@ -5,7 +5,7 @@ const Cardskills = (props) => {
     <div className="text-center">
       <div
         className="p-4 glass-1 grid justify-items-center"
-        //  data-aos={"zoom-in-down"}
+        data-aos={"zoom-in-down"}
       >
         <Image
           width={125}
