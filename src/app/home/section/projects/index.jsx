@@ -10,18 +10,14 @@ import {
 
 const Projects = () => {
   return (
-    <section className="uppercase text-center px-5" id="Projet">
+    <section
+      className="uppercase text-center lg:grid lg:justify-items-center"
+      id="Projet"
+    >
       <div className="my-8">
-        <h1 className="text-4xl">
-          <LinearTextGradient
-            angle={20}
-            colors={["#A67008", "#9F6409", "#993D00", "#B02909", "#A60810"]}
-          >
-            projet
-          </LinearTextGradient>
-        </h1>
+        <h1 className="text-4xl neon">projet</h1>
       </div>
-      <div>
+      <div className=" lg:w-4/6 lg:">
         <div className="flex flex-col lg:grid lg:grid-cols-2 lg:justify-items-center">
           {data.map((element) => {
             return (
@@ -30,7 +26,6 @@ const Projects = () => {
                 title={element.title}
                 img={element.img}
                 onClick={() => alert(element.title)}
-                
               />
             );
           })}

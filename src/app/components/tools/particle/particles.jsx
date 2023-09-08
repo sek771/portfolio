@@ -10,22 +10,19 @@ export const options = {
       },
       resize: true,
     },
-    modes: {
-      push: { quantity: 4 },
-      attract: { distance: 200, duration: 0.4, factor: 5 },
-    },
+   
   },
   particles: {
-    color: { value: "#33322C" },
+    color: { value: "#BDDC01" },
     line_linked: {
-      color: "#ffffff",
+      color: "#F5EDA9",
       distance: 150,
       enable: true,
       opacity: 0.4,
       width: 1,
     },
     move: {
-      attract: { enable: false, rotateX: 600, rotateY: 1200 },
+      attract: { enable: false, rotateX: 0, rotateY: 0 },
       bounce: false,
       direction: "none",
       enable: true,
@@ -71,5 +68,5 @@ export const options = {
     type: "none",
     url: "",
   },
-  retina_detect: true,
+  retina_detect: false,
 };

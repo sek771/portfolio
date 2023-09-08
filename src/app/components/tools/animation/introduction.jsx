@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 import { TypeAnimation } from "react-type-animation";
 
 const IntroAnimation = () => {
   return (
-    <div className="font-aileron mx-24 my-24">
-        <TypeAnimation
+    <div className="">
+  <TypeAnimation
           sequence={[
             "Bonjour, je suis SEKOU SACKO",
             100,
@@ -19,7 +19,7 @@ const IntroAnimation = () => {
           style={{ fontSize: "2em" }}
           repeat={1}
         />
-            
+  
     </div>
   );
 };

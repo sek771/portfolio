@@ -14,6 +14,7 @@ const FooterDesktop = () => {
       <div className="grid grid-cols-3">
         <div className="flex flex-col items-center justify-center pt-8">
           <a href="http://sacko-portfolio.fr/">
+          
             <img src="/logo/logo.png" alt="" width={200} height={200} />
           </a>
           <p className="font-aileron">Made by Sekou </p>

@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 const Cardskills = (props) => {
   return (
-    <div className="text-center">
+    <div className="text-center lg:grid lg:justify-items-center">
       <div
-        className="p-4 glass-1 grid justify-items-center"
+        className="p-4 glass-1 grid justify-items-center "
         data-aos={"zoom-in-down"}
       >
         <Image

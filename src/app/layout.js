@@ -1,4 +1,5 @@
 "use client";
+
 import "@/app/assets/css/styles.css";
 import { Inter } from "next/font/google";
 import AOS from "aos";

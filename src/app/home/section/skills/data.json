@@ -33,5 +33,16 @@
     "id": 7,
     "img": "/competences/canva.png",
     "p": "CANVA"
+  },
+  {
+    "id": 8,
+    "img": "/competences/php.png",
+    "p": "PHP"
+  },
+
+  {
+    "id": 9,
+    "img": "/competences/symfony-removebg-preview.png",
+    "p": "Symfony"
   }
 ]

@@ -4,7 +4,7 @@ import Image from 'next/image'
 const Card = (props) => {
   return (
     <div className="my-4 lg:w-[300px]">
-      <div className="glass grid justify-items-center glass-2 lg:p-12"
+      <div className="glass grid justify-items-center glass-2"
       data-aos={"flip-up"}
       >
         <h1 className="">{props.title}</h1>

@@ -1,16 +1,18 @@
 export const data = [
   {
-    cardSubtitle: "J'ai obtenu mon brevet des colléges.",
-
+    cardTitle: "Développeur web et web mobile",
+    cardSubtitle: "Access Code School - 2023/2024",
+    cardDetailedText: "Apprentissage du développement",
   },
   {
-    cardSubtitle:
-      "J'ai participé a un atelier d'une semaine sur le développement web intitulé <<Digi'code>>",
-  
+    cardTitle: "Sécurité numérique",
+    cardSubtitle: "ANSSI Online - 2023",
+    cardDetailedText: "Sécurité",
   },
   {
-    cardSubtitle:
-      " J'ai suivi une formation en développement web et web mobile, me permettant d'obtenir une équivalence bac+2 en back-end et front-end.",
-  
-  },
+    cardTitle: "RGPD",
+    cardSubtitle: "CNIL Online - 2023",
+    cardDetailedText:
+      "Protection de données",
+  }
 ];
