@@ -15,15 +15,15 @@ const Header = () => {
           </h1>
           <Animation />
           <div className="font-klein flex flex-col pt-20 lg:flex-row">
-            <TbFileCv size={25} />
             <a
               href="http://sacko-portfolio.fr/docs/cv.pdf"
               target="_blank"
               rel="noreferrer noopener"
-              className="uppercase lg:pr-8"
+              className="uppercase lg:pr-8 my-3"
             >
-              Mon cv
+              mon cv
             </a>
+
             <button className="uppercase lg:pl-8">Mes projets</button>
           </div>
         </div>

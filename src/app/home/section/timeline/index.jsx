@@ -10,7 +10,7 @@ import { data } from "./data";
 
 const Timeline = () => {
   return (
-    <section className="" id="parcours">
+    <section className="mx-4" id="parcours">
       <div className="uppercase text-center my-8 ">
         <h1 className="text-4xl neon">parcours </h1>
       </div>

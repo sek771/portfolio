@@ -12,7 +12,7 @@ const Introduction = () => {
   return (
     <>
       <section
-        className=" grid grid-cols-1 justify-items-center"
+        className=" grid grid-cols-1 justify-items-center mx-4"
         id="Présentation"
       >
         <div className="grid justify-items-center lg:w-4/6">
@@ -24,14 +24,14 @@ const Introduction = () => {
           <div className="glass lg:grid lg:grid-cols-2" data-aos="flip-left">
             <div className="flex justify-center">
               <img
-                src="./IMG_0587.png"
-                width={150}
-                height={150}
+                src="/images/IMG_0587.jpg"
+                width={250}
+                height={350}
                 alt="Picture of the author"
-                className="rounded-full py-6 lg:p-8"
+                className="rounded-full my-6 lg:m-8"
               />
             </div>
-            <div className="font-aileron py-6 px-4 lg:grid lg:justify-items-center">
+            <div className="font-aileron text-xl py-6 px-4 lg:grid lg:justify-items-center">
               <p>
                 Bienvenue sur mon portfolio en développement web et web mobile !{" "}
               </p>

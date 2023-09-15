@@ -12,16 +12,14 @@ import Preload from "../components/tools/preloader/load";
 const Home = () => {
   return (
     <>
-      
-      <Main className="bg-slate-800">
-      
+      <Main className="bg-slate-800 overflow-x-hidden">
+        <ParticlesBackground />
         <Header />
         <Introduction />
         <Skills />
         <Projects />
         <Timeline />
         <Contact />
-        <ParticlesBackground />
       </Main>
     </>
   );

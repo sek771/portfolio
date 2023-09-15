@@ -10,7 +10,7 @@ const Contact = () => {
   return (
     <>
       <section
-        className=""
+        className="mx-4"
         id="Contact">
         <div className="py-8">
           <h1 className="uppercase text-center text-4xl pb-8 neon">Contact </h1>

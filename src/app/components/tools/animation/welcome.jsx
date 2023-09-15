@@ -22,8 +22,8 @@ const Animation = () => {
       wrapper="span"
       cursor={true}
       repeat={Infinity}
-      style={{ fontSize: "2em", display: "inline-block", color: "red" }}
-      className="font-aileron"
+      style={{ fontSize: "1.5em", display: "inline-block", color: "yellow" }}
+      className="font-aileron mx-4 text-center"
     />
   );
 };

@@ -11,7 +11,7 @@ import {
 const Projects = () => {
   return (
     <section
-      className="uppercase text-center lg:grid lg:justify-items-center"
+      className="uppercase text-center lg:grid lg:justify-items-center mx-4"
       id="Projet"
     >
       <div className="my-8">
