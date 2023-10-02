@@ -6,7 +6,7 @@ import { TbFileCv } from "react-icons/tb";
 
 const Header = () => {
   return (
-    <section>
+    <section >
       <div className=" w-full h-screen bg-[url('/galaxy.jpg')] bg-no-repeat bg-cover bg-center">
         <div className="text-yellow-200 w-full h-screen flex flex-col justify-center items-center">
           <img src="logo/logo.png" alt="" width={150} height={150} />

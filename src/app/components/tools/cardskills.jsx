@@ -5,7 +5,6 @@ const Cardskills = (props) => {
     <div className="lg:flex lg:items-center ">
       <div
         className=" glass-1 flex items-center justify-center   "
-        data-aos={"zoom-in-dow"}
       >
         <Image
           width={100}
