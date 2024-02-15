@@ -15,7 +15,7 @@ const HeaderDesktop = () => {
         <div className="flex flex-row justify-around">
           <div className="">
             <a href="http://sacko-portfolio.fr">
-              <img src="/logo/logo.png" alt="" width={125} height={125} />
+              <img src="/logo/logo.png" alt="logo sacko portfolio" width={125} height={125} />
             </a>
           </div>
           <ul className="font-klein flex flex-row uppercase py-4">

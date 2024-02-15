@@ -6,8 +6,6 @@ import Projects from "@/app/home/section/projects";
 import Timeline from "@/app/home/section/timeline";
 import Contact from "@/app/home/section/contact";
 import ParticlesBackground from "../components/tools/particle";
-import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import Preload from "../components/tools/preloader/load";
 
 const Home = () => {
   return (
