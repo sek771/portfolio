@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "img": "/competences/html.png",
+    "p": "HTML"
+  },
+  {
+    "id": 2,
+    "img": "/competences/css.png",
+    "p": "CSS"
+  },
+  {
+    "id": 3,
+    "img": "/competences/js.png",
+    "p": "JavaScript"
+  },
+  {
+    "id": 4,
+    "img": "/competences/react.png",
+    "p": "REACT"
+  },
+  {
+    "id": 5,
+    "img": "/competences/tailwind.png",
+    "p": "Tailwind"
+  },
+  {
+    "id": 6,
+    "img": "/competences/figma.png",
+    "p": "FIGMA"
+  },
+  {
+    "id": 7,
+    "img": "/competences/canva.png",
+    "p": "CANVA"
+  },
+  {
+    "id": 8,
+    "img": "/competences/php.png",
+    "p": "PHP"
+  },
+
+  {
+    "id": 9,
+    "img": "/competences/symfony-removebg-preview.png",
+    "p": "Symfony"
+  }
+]

@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff/l/font?kit=JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6aXx-p7K4KLj5v8AqEn_YpsD2&skey=2d3c1187d5eede0f&v=v25) format('woff');
+}

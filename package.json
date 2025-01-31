@@ -1,0 +1,37 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-spring/parallax": "^9.7.3",
+    "aos": "^3.0.0-beta.6",
+    "autoprefixer": "10.4.14",
+    "emailjs-com": "^3.2.0",
+    "eslint": "8.42.0",
+    "eslint-config-next": "13.4.4",
+    "formik": "^2.4.5",
+    "install": "^0.13.0",
+    "next": "13.4.4",
+    "npm": "^9.8.1",
+    "postcss": "8.4.24",
+    "prop-types": "^15.8.1",
+    "react": "18.2.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-burger-menu": "^3.0.9",
+    "react-chrono": "^2.2.4",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
+    "react-scroll-to-top": "^3.0.0",
+    "react-text-gradients-and-animations": "^1.1.7",
+    "react-tsparticles": "^2.11.0",
+    "react-type-animation": "^3.1.0",
+    "tailwindcss": "3.3.2",
+    "tsparticles": "^2.11.1"
+  }
+}
