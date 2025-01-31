@@ -1,34 +1,46 @@
-"use client";
-
-import Card from "@/app/components/tools/card";
-import data from "./data.json";
-import {
-  LinearTextGradient,
-  RadialTextGradient,
-  ConicTextGradient,
-} from "react-text-gradients-and-animations";
-
 const Projects = () => {
+  const projects = [
+    {
+      title: "projet agence web",
+      img: "./project img/uchiwa.png",
+      href: "https://deep-404.netlify.app/",
+    },
+    {
+      title: "Projet personnel",
+      img: "./project img/uchiwa.png",
+      href: "",
+    },
+    {
+      title: "portfolio",
+      img: "./project img/uchiwa.png",
+      href: "",
+    },
+    {
+      title: "Projet digicodes",
+      img: "./project img/digicodes.png",
+      href: "https://digicodes.fr/sekou/",
+    },
+  ];
+
   return (
     <section
-      className="uppercase text-center lg:grid lg:justify-items-center mx-4"
-      id="Projet"
+      id="projects"
+      className="bg-gray-900 text-white py-16 text-center "
     >
-      <div className="my-8">
-        <h1 className="text-4xl neon">projet</h1>
-      </div>
-      <div className=" lg:w-4/6 lg:">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 lg:justify-items-center">
-          {data.map((element) => {
-            return (
-              <Card
-                key={element.id}
-                title={element.title}
-                img={element.img}
-                onClick={() => alert(element.title)}
-              />
-            );
-          })}
+      <h2 className="text-3xl md:text-4xl font-bold mb-12">Mes Projets</h2>
+      <div className="grid justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
+          {projects.map(({ title, img, href }) => (
+            <div
+              key={title}
+              className="flex flex-col items-center p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition"
+            >
+              <img src={img} alt="" />
+              <a href={href}>
+                <h3 className="text-lg font-semibold">{title}</h3>
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </section>
