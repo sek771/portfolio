@@ -1,25 +1,17 @@
-import Form from "@/app/components/tools/form";
+"use client";
 
-import {
-  LinearTextGradient,
-  RadialTextGradient,
-  ConicTextGradient,
-} from "react-text-gradients-and-animations";
+import Form from "@/app/components/tools/form";
 
 const Contact = () => {
   return (
-    <>
-      <section
-        className="mx-4"
-        id="Contact">
-        <div className="py-8">
-          <h1 className="uppercase text-center text-4xl pb-8 neon">Contact </h1>
-          <div className=" lg:flex lg:justify-center">
-            <Form />
-          </div>
+    <section className="text-center bg-gray-900" id="contact">
+      <h1 className="text-4xl neon uppercase mb-6">Contact</h1>
+      <div className="flex justify-center">
+        <div className="glass lg:w-4/6 p-6 rounded-lg shadow-lg bg-gray-900 border border-gray-700">
+          <Form />
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
