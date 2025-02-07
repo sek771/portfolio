@@ -1,72 +1,46 @@
-const Logo = () => {
+"use client";
+
+const Introduction = () => {
   return (
-    <svg
-      width="300"
-      height="150"
-      viewBox="0 0 600 200"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+    <section
+      className="grid justify-items-center bg-gray-900 text-white"
+      id="Présentation"
     >
-      {/* Import d'une police Google en ligne */}
-      <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-        `}
-      </style>
-
-      {/* Texte SACKO avec une police calligraphique */}
-      <text
-        x="150"
-        y="130"
-        fontFamily="'Great Vibes', cursive"
-        fontSize="100"
-        fontWeight="bold"
-        fill="#F2A900"
-      >
-        SACKO
-      </text>
-
-      {/* Aile gauche */}
-      <path
-        d="M100 80 C50 60, 30 20, 40 10 C60 10, 90 30, 110 50"
-        fill="none"
-        stroke="#F2A900"
-        strokeWidth="8"
-      />
-      <path
-        d="M90 100 C30 90, 10 50, 20 40 C40 40, 70 70, 90 90"
-        fill="none"
-        stroke="#F2A900"
-        strokeWidth="6"
-      />
-      <path
-        d="M80 120 C20 110, 5 80, 15 70 C30 70, 60 100, 80 110"
-        fill="none"
-        stroke="#F2A900"
-        strokeWidth="4"
-      />
-
-      {/* Aile droite */}
-      <path
-        d="M500 80 C550 60, 570 20, 560 10 C540 10, 510 30, 490 50"
-        fill="none"
-        stroke="#F2A900"
-        strokeWidth="8"
-      />
-      <path
-        d="M510 100 C570 90, 590 50, 580 40 C560 40, 530 70, 510 90"
-        fill="none"
-        stroke="#F2A900"
-        strokeWidth="6"
-      />
-      <path
-        d="M520 120 C580 110, 595 80, 585 70 C570 70, 540 100, 520 110"
-        fill="none"
-        stroke="#F2A900"
-        strokeWidth="4"
-      />
-    </svg>
+      <div className="lg:w-4/6 text-center my-8">
+        <h1
+          className="text-3xl md:text-4xl font-bold text-center mb-12 "
+          style={{ color: "#ffd700" }}
+        >
+          Présentation
+        </h1>
+        <div className="flex flex-col items-center p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition lg:grid lg:grid-cols-2">
+          <img
+            src="/images/img.png"
+            width={250}
+            height={350}
+            alt="Picture of the author"
+            className="my-6 lg:m-8"
+          />
+          <div className="font-aileron text-xl py-6 px-4 lg:text-left">
+            <p>
+              Bienvenue sur mon portfolio en développement web et web mobile !
+            </p>
+            <p>
+              Passionné par la création d'expériences en ligne, j'ai acquis une
+              expertise en HTML, CSS, JavaScript et React.
+            </p>
+            <p>
+              Vous trouverez ici des projets variés sur lesquels j'ai travaillé.
+            </p>
+            <p>
+              N'hésitez pas à explorer et à me contacter pour en savoir plus.
+            </p>
+            <p>Merci de votre visite !</p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default Logo;
+export default Introduction;

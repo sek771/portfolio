@@ -5,7 +5,6 @@ import Home from "@/app/home";
 import Footer from "@/app/components/layouts/footer";
 import Scroll from "./components/tools/scroll to top";
 
-
 const HomePage = () => {
   return (
     <>

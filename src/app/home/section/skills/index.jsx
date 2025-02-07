@@ -12,12 +12,12 @@ const Skills = () => {
 
   return (
     <section id="skills" className="bg-gray-900 text-white py-16 text-center ">
-      <h2
+      <h1
         className="text-3xl md:text-4xl font-bold mb-12"
         style={{ color: "#ffd700" }}
       >
         Mes Compétences
-      </h2>
+      </h1>
       <div className="grid justify-items-center">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
           {skills.map(({ name, icon }) => (
