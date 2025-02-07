@@ -2,19 +2,17 @@
 
 import { TbFileCv } from "react-icons/tb";
 import { FiGithub } from "react-icons/fi";
-import { LuLinkedin } from "react-icons/lu"
-import { MdOutlinePhoneIphone } from "react-icons/md"
-import { MdOutlineEmail } from "react-icons/md"
-import { GiPositionMarker } from "react-icons/gi"
-
+import { LuLinkedin } from "react-icons/lu";
+import { MdOutlinePhoneIphone } from "react-icons/md";
+import { MdOutlineEmail } from "react-icons/md";
+import { GiPositionMarker } from "react-icons/gi";
 
 const FooterDesktop = () => {
   return (
-    <footer className="hidden lg:flex lg:flex-col w-full bg-cyan-800">
+    <footer className="hidden lg:flex lg:flex-col w-full bg-[#1C1F26]">
       <div className="grid grid-cols-3">
         <div className="flex flex-col items-center justify-center pt-8">
           <a href="http://sacko-portfolio.fr/">
-          
             <img src="/logo/logo.png" alt="" width={200} height={200} />
           </a>
           <p className="font-aileron">Made by Sekou </p>
@@ -62,7 +60,10 @@ const FooterDesktop = () => {
           <div className="py-4">
             <p className="inline-flex">
               <LuLinkedin size={25} />
-              <a href="https://fr.linkedin.com/in/sekou-sacko-a93b1227a" className="pl-2">
+              <a
+                href="https://fr.linkedin.com/in/sekou-sacko-a93b1227a"
+                className="pl-2"
+              >
                 linkedin
               </a>
             </p>

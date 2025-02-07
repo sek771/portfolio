@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import Animation from "@/app/components/tools/animation/welcome";
+import Logo from "@/app/components/tools/logo";
 import { TbFileCv } from "react-icons/tb";
 
 const Header = () => {
@@ -46,7 +47,7 @@ const Header = () => {
 
     function animate() {
       requestAnimationFrame(animate);
-      ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+      ctx.fillStyle = "rgb(16, 24, 40)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       stars.forEach((star) => star.update());
     }
@@ -70,7 +71,7 @@ const Header = () => {
 
       {/* Contenu */}
       <div className="relative z-10 text-yellow-200 w-full h-screen flex flex-col justify-center items-center">
-        <img src="logo/logo.png" alt="Logo" width={150} height={150} />
+        <Logo />
         <h1 className="font-klein text-center mx-4 py-10 lg:text-xl">
           Bonjour et bienvenue sur mon portfolio !
         </h1>

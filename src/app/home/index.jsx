@@ -5,13 +5,11 @@ import Skills from "@/app/home/section/skills";
 import Projects from "@/app/home/section/projects";
 import Timeline from "@/app/home/section/timeline";
 import Contact from "@/app/home/section/contact";
-import ParticlesBackground from "../components/tools/particle";
 
 const Home = () => {
   return (
     <>
-      <Main className="bg-slate-800 overflow-x-hidden">
-        <ParticlesBackground />
+      <Main className="overflow-x-hidden">
         <Header />
         <Introduction />
         <Skills />
