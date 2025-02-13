@@ -89,7 +89,7 @@ const HeaderDesktop = () => {
               </svg>
             </a>
           </div>
-          <ul className="px-4 px-4 font-klein flex flex-row uppercase">
+          <ul className="text-[#f2a900] px-4 px-4 font-klein flex flex-row uppercase">
             <li className="flex items-center gap-x-2">
               <AiFillHome />
               <a href="http://sacko-portfolio.fr" aria-label="Accueil">

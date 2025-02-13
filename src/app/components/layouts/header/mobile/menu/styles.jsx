@@ -7,7 +7,7 @@ export let styles = {
     top: "30px",
   },
   bmBurgerBars: {
-    background: "#F2A900",
+    background: "#b28c2f",
   },
   bmBurgerBarsHover: {
     background: "#5778FA",
@@ -32,7 +32,7 @@ export let styles = {
     fill: "#000000",
   },
   bmItemList: {
-    color: "#F2A900",
+    color: "#b28c2f",
     padding: "0.8em",
   },
   bmItem: {

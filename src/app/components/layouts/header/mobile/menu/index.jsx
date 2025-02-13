@@ -40,19 +40,19 @@ const MenuNav = () => {
               <path
                 d="M150 100 C80 70, 50 40, 60 30 C90 30, 130 70, 150 90"
                 fill="none"
-                stroke="#F2A900"
+                stroke="#b28c2f"
                 strokeWidth="6"
               />
               <path
                 d="M140 120 C70 90, 30 60, 40 50 C70 50, 110 90, 130 110"
                 fill="none"
-                stroke="#F2A900"
+                stroke="#b28c2f"
                 strokeWidth="4"
               />
               <path
                 d="M130 140 C60 110, 10 80, 20 70 C50 70, 90 110, 110 130"
                 fill="none"
-                stroke="#F2A900"
+                stroke="#b28c2f"
                 strokeWidth="3"
               />
 
@@ -60,19 +60,19 @@ const MenuNav = () => {
               <path
                 d="M450 100 C520 70, 550 40, 540 30 C510 30, 470 70, 450 90"
                 fill="none"
-                stroke="#F2A900"
+                stroke="#b28c2f"
                 strokeWidth="6"
               />
               <path
                 d="M460 120 C530 90, 570 60, 560 50 C530 50, 490 90, 470 110"
                 fill="none"
-                stroke="#F2A900"
+                stroke="#b28c2f"
                 strokeWidth="4"
               />
               <path
                 d="M470 140 C540 110, 590 80, 580 70 C550 70, 510 110, 490 130"
                 fill="none"
-                stroke="#F2A900"
+                stroke="#b28c2f"
                 strokeWidth="3"
               />
 
@@ -83,7 +83,7 @@ const MenuNav = () => {
                 fontFamily="'Great Vibes', cursive"
                 fontSize="70"
                 fontWeight="bold"
-                fill="#F2A900"
+                fill="#b28c2f"
                 textAnchor="middle"
               >
                 SACKO
