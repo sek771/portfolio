@@ -2,13 +2,14 @@
 
 import React, { useEffect, useRef } from "react";
 import Animation from "@/app/components/tools/animation/welcome";
-import Logo from "@/app/components/tools/logo";
-import { TbFileCv } from "react-icons/tb";
 
 const Header = () => {
   const canvasRef = useRef(null);
+  const animationFrameRef = useRef(null);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -19,9 +20,6 @@ const Header = () => {
       canvas.height = window.innerHeight;
       init();
     };
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
 
     let stars = [];
     const numStars = 200;
@@ -50,26 +48,25 @@ const Header = () => {
     }
 
     function init() {
-      stars = [];
-      for (let i = 0; i < numStars; i++) {
-        stars.push(new Star());
-      }
+      stars = Array.from({ length: numStars }, () => new Star());
     }
 
     function animate() {
-      requestAnimationFrame(animate);
       ctx.fillStyle = "rgb(16, 24, 40)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       stars.forEach((star) => star.update());
+      animationFrameRef.current = requestAnimationFrame(animate);
     }
 
-    init();
+    resizeCanvas();
     animate();
 
     window.addEventListener("resize", resizeCanvas);
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      if (animationFrameRef.current)
+        cancelAnimationFrame(animationFrameRef.current);
     };
   }, []);
 
