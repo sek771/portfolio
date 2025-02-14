@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Animation from "@/app/components/tools/animation/welcome";
+import { TbFileCv } from "react-icons/tb";
 
 const Header = () => {
   const canvasRef = useRef(null);
@@ -59,6 +60,7 @@ const Header = () => {
     }
 
     resizeCanvas();
+    init();
     animate();
 
     window.addEventListener("resize", resizeCanvas);
@@ -85,12 +87,6 @@ const Header = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <style>
-            {`
-              @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-            `}
-          </style>
-
           {/* Ailes Gauche */}
           <path
             d="M150 100 C80 70, 50 40, 60 30 C90 30, 130 70, 150 90"
