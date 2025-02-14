@@ -1,19 +1,29 @@
-import React from "react";
-import ScrollToTop from "react-scroll-to-top";
-import { BsFileArrowUp } from "react-icons/bs";
+"use client";
+import { useEffect, useState } from "react";
 
 const Scroll = () => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
   return (
-    <div className="Scroll">
-      <ScrollToTop
-        smooth
-        component={
-          <div className="w-full h-full flex justify-center items-center hover:bg-blue-300 hover:text-red-500">
-            <BsFileArrowUp size={25} />
-          </div>
-        }
-      />
-    </div>
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      style={{ display: visible ? "block" : "none" }}
+    >
+      ↑
+    </button>
   );
 };
 
