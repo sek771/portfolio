@@ -4,22 +4,22 @@ const Projects = () => {
   const projects = [
     {
       title: "projet agence web",
-      img: "./project img/uchiwa.png",
+      img: "/project-img/uchiwa.png",
       href: "https://deep-404.netlify.app/",
     },
     {
       title: "Projet personnel",
-      img: "./project img/uchiwa.png",
+      img: "/project-img/uchiwa.png",
       href: "",
     },
     {
       title: "portfolio",
-      img: "./project img/uchiwa.png",
+      img: "/project-img/uchiwa.png",
       href: "",
     },
     {
       title: "Projet digicodes",
-      img: "./project img/digicodes.png",
+      img: "/project-img/digicodes.png",
       href: "https://digicodes.fr/sekou/",
     },
   ];
@@ -42,7 +42,7 @@ const Projects = () => {
               key={title}
               className="border border-[#b28c2f] flex flex-col items-center p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition"
             >
-              <Image src={img} alt="" />
+              <Image src={img} alt="" width={1} height={1} />
               <a href={href}>
                 <h3 className="text-lg font-semibold">{title}</h3>
               </a>
