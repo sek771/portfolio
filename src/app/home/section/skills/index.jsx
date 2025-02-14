@@ -14,7 +14,7 @@ const Skills = () => {
     <section id="skills" className="bg-gray-900 text-white py-16 text-center ">
       <h1
         className="text-3xl md:text-4xl font-bold mb-12"
-        style={{ color: "#ffd700" }}
+        style={{ color: "#b28c2f" }}
       >
         Mes Compétences
       </h1>
@@ -23,7 +23,7 @@ const Skills = () => {
           {skills.map(({ name, icon }) => (
             <div
               key={name}
-              className="flex flex-col items-center p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition"
+              className="border border-[#b28c2f] flex flex-col items-center p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition"
             >
               <span className="text-4xl mb-4">{icon}</span>
               <h3 className="text-lg font-semibold">{name}</h3>

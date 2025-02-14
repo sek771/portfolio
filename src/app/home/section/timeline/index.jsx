@@ -8,12 +8,12 @@ const Timeline = () => {
     <section className=" text-center bg-gray-900" id="parcours">
       <h1
         className="text-3xl md:text-4xl font-bold mb-12"
-        style={{ color: "#ffd700" }}
+        style={{ color: "#b28c2f" }}
       >
         Parcours
       </h1>
       <div className="flex justify-center">
-        <div className="glass lg:w-4/6 lg:pr-20 p-6 rounded-lg shadow-lg bg-gray-800 border border-gray-700">
+        <div className="border border-[#b28c2f] lg:w-4/6 lg:pr-20 p-6 rounded-lg shadow-lg bg-gray-800 border border-gray-700">
           <Chrono
             items={data}
             mode="VERTICAL_ALTERNATING"
