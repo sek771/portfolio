@@ -9,10 +9,9 @@ const Header = () => {
   const animationFrameRef = useRef(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window === "undefined") {
       setWidth(window.innerWidth);
     }
-  }, []);
 
     const canvas = canvasRef.current;
     if (!canvas) return;
