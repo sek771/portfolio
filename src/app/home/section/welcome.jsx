@@ -1,15 +1,16 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Animation from "@/app/components/tools/animation/welcome";
 import { TbFileCv } from "react-icons/tb";
 
 const Header = () => {
   const canvasRef = useRef(null);
   const animationFrameRef = useRef(null);
+  const [width, setWidth] = useState(0); // Ajout de l'état width
 
   useEffect(() => {
-    if (typeof window === "undefined") {
+    if (typeof window !== "undefined") {
       setWidth(window.innerWidth);
     }
 
@@ -19,8 +20,10 @@ const Header = () => {
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      if (typeof window !== "undefined") {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
       init();
     };
 
