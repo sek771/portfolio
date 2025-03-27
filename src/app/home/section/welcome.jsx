@@ -7,44 +7,40 @@ import { TbFileCv } from "react-icons/tb";
 const Header = () => {
   const canvasRef = useRef(null);
   const animationFrameRef = useRef(null);
-  const [width, setWidth] = useState(0); // Ajout de l'état width
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setWidth(window.innerWidth);
-    }
-
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const resizeCanvas = () => {
-      if (typeof window !== "undefined") {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-      init();
-    };
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-    let stars = [];
     const numStars = 200;
+    let stars = [];
+    let planets = [];
+    let shootingStars = [];
 
     class Star {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.radius = Math.random() * 1.5;
-        this.dx = (Math.random() - 0.5) * 0.5;
-        this.dy = (Math.random() - 0.5) * 0.5;
+        this.dx = (Math.random() - 0.5) * 0.3;
+        this.dy = (Math.random() - 0.5) * 0.3;
+        this.opacity = Math.random();
+        this.twinkleSpeed = Math.random() * 0.02;
       }
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
         ctx.fill();
       }
       update() {
+        this.opacity += this.twinkleSpeed * (Math.random() > 0.5 ? 1 : -1);
+        this.opacity = Math.min(1, Math.max(0.3, this.opacity));
         this.x += this.dx;
         this.y += this.dy;
         if (this.x < 0 || this.x > canvas.width) this.dx *= -1;
@@ -53,25 +49,90 @@ const Header = () => {
       }
     }
 
+    class Planet {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 40 + 20;
+        this.color = `hsl(${Math.random() * 360}, 80%, 60%)`;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = this.color;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    class ShootingStar {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = (Math.random() * canvas.height) / 2;
+        this.length = Math.random() * 80 + 30;
+        this.speed = Math.random() * 10 + 5;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(this.x - this.length, this.y + this.length);
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+      update() {
+        this.x += this.speed;
+        this.y += this.speed;
+        if (this.x > canvas.width || this.y > canvas.height) {
+          this.x = Math.random() * canvas.width;
+          this.y = (Math.random() * canvas.height) / 2;
+        }
+        this.draw();
+      }
+    }
+
     function init() {
       stars = Array.from({ length: numStars }, () => new Star());
+      planets = Array.from({ length: 5 }, () => new Planet());
+      shootingStars = Array.from({ length: 3 }, () => new ShootingStar());
     }
 
     function animate() {
-      ctx.fillStyle = "rgb(16, 24, 40)";
+      ctx.fillStyle = "rgba(10, 10, 35, 0.9)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const gradient = ctx.createLinearGradient(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+      gradient.addColorStop(0, "#0a0a23");
+      gradient.addColorStop(0.5, "#1b2957");
+      gradient.addColorStop(1, "#0a0a23");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
       stars.forEach((star) => star.update());
+      planets.forEach((planet) => planet.draw());
+      shootingStars.forEach((s) => s.update());
+
       animationFrameRef.current = requestAnimationFrame(animate);
     }
 
-    resizeCanvas();
     init();
     animate();
 
-    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init();
+    });
 
     return () => {
-      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener("resize", () => {});
       if (animationFrameRef.current)
         cancelAnimationFrame(animationFrameRef.current);
     };
@@ -80,7 +141,7 @@ const Header = () => {
   return (
     <section className="relative w-full h-screen overflow-hidden">
       {/* Fond galaxie animé */}
-      <div className="absolute inset-0 bg-black">
+      <div className="absolute inset-0">
         <canvas ref={canvasRef} className="w-full h-full"></canvas>
       </div>
 
@@ -92,47 +153,6 @@ const Header = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Ailes Gauche */}
-          <path
-            d="M150 100 C80 70, 50 40, 60 30 C90 30, 130 70, 150 90"
-            fill="none"
-            stroke="#F2A900"
-            strokeWidth="6"
-          />
-          <path
-            d="M140 120 C70 90, 30 60, 40 50 C70 50, 110 90, 130 110"
-            fill="none"
-            stroke="#F2A900"
-            strokeWidth="4"
-          />
-          <path
-            d="M130 140 C60 110, 10 80, 20 70 C50 70, 90 110, 110 130"
-            fill="none"
-            stroke="#F2A900"
-            strokeWidth="3"
-          />
-
-          {/* Ailes Droite */}
-          <path
-            d="M450 100 C520 70, 550 40, 540 30 C510 30, 470 70, 450 90"
-            fill="none"
-            stroke="#F2A900"
-            strokeWidth="6"
-          />
-          <path
-            d="M460 120 C530 90, 570 60, 560 50 C530 50, 490 90, 470 110"
-            fill="none"
-            stroke="#F2A900"
-            strokeWidth="4"
-          />
-          <path
-            d="M470 140 C540 110, 590 80, 580 70 C550 70, 510 110, 490 130"
-            fill="none"
-            stroke="#F2A900"
-            strokeWidth="3"
-          />
-
-          {/* Texte SACKO Centré */}
           <text
             x="300"
             y="130"

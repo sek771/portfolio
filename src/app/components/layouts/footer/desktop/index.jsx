@@ -8,9 +8,10 @@ import { GiPositionMarker } from "react-icons/gi";
 
 const FooterDesktop = () => {
   return (
-    <footer className="hidden lg:flex lg:flex-col w-full bg-[#1C1F26]">
-      <div className="grid grid-cols-3">
-        <div className="flex flex-col items-center justify-center pt-8">
+    <footer className="hidden lg:flex flex-col w-full bg-[#1C1F26] text-white">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-16 py-12 px-6">
+        {/* Logo et attribution */}
+        <div className="flex flex-col items-center justify-center">
           <a href="http://sacko-portfolio.fr/" rel="noopener noreferrer">
             <svg
               width="300"
@@ -73,96 +74,89 @@ const FooterDesktop = () => {
               </text>
             </svg>
           </a>
-          <p className="font-aileron">Made by Sekou</p>
+          <p className="font-aileron text-center mt-2">Made by Sekou</p>
         </div>
 
         {/* Contact */}
-        <div className="flex flex-col items-center justify-center pt-8">
-          <ul className="font-aileron text-[#b28c2f]">
-            <li>
-              <p className="inline-flex">
-                <MdOutlineEmail size={25} />
-                <a
-                  href="mailto:contact@sacko-portfolio.fr"
-                  className="pl-2"
-                  rel="noopener noreferrer"
-                >
-                  contact@sacko-portfolio.fr
-                </a>
-              </p>
+        <div className="flex flex-col items-center justify-center">
+          <ul className="font-aileron text-[#b28c2f] space-y-6">
+            <li className="flex items-center">
+              <MdOutlineEmail size={30} />
+              <a
+                href="mailto:contact@sacko-portfolio.fr"
+                className="pl-4 text-lg hover:text-white transition duration-300"
+                rel="noopener noreferrer"
+              >
+                contact@sacko-portfolio.fr
+              </a>
             </li>
-            <li className="py-4">
-              <p className="inline-flex">
-                <MdOutlinePhoneIphone size={25} />
-                <a href="tel:0781664053" className="pl-2">
-                  07 81 66 40 53
-                </a>
-              </p>
+            <li className="flex items-center">
+              <MdOutlinePhoneIphone size={30} />
+              <a
+                href="tel:0781664053"
+                className="pl-4 text-lg hover:text-white transition duration-300"
+              >
+                07 81 66 40 53
+              </a>
             </li>
-            <li>
-              <p className="inline-flex">
-                <GiPositionMarker size={25} />
-                <a
-                  href="https://www.google.com/search?q=meaux"
-                  className="pl-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Meaux (77100)
-                </a>
-              </p>
+            <li className="flex items-center">
+              <GiPositionMarker size={30} />
+              <a
+                href="https://www.google.com/search?q=meaux"
+                className="pl-4 text-lg hover:text-white transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Meaux (77100)
+              </a>
             </li>
           </ul>
         </div>
 
         {/* Réseaux sociaux */}
-        <div className="pt-8 flex flex-col justify-center items-center text-[#b28c2f]">
-          <div>
-            <p className="inline-flex">
-              <FiGithub size={25} />
-              <a
-                href="https://github.com/sek771"
-                className="pl-2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-            </p>
+        <div className="flex flex-col justify-center items-center text-[#b28c2f] space-y-6">
+          <div className="flex items-center space-x-4">
+            <FiGithub size={30} />
+            <a
+              href="https://github.com/sek771"
+              className="text-lg hover:text-white transition duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
           </div>
-          <div className="py-4">
-            <p className="inline-flex">
-              <LuLinkedin size={25} />
-              <a
-                href="https://fr.linkedin.com/in/sekou-sacko-a93b1227a"
-                className="pl-2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-            </p>
+          <div className="flex items-center space-x-4">
+            <LuLinkedin size={30} />
+            <a
+              href="https://fr.linkedin.com/in/sekou-sacko-a93b1227a"
+              className="text-lg hover:text-white transition duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
           </div>
-          <div>
-            <p className="inline-flex">
-              <TbFileCv size={25} />
-              <a
-                href="https://sacko-portfolio.fr/docs/cv.pdf"
-                className="pl-2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @Sekou
-              </a>
-            </p>
+          <div className="flex items-center space-x-4">
+            <TbFileCv size={30} />
+            <a
+              href="https://sacko-portfolio.fr/docs/cv.pdf"
+              className="text-lg hover:text-white transition duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              CV @Sekou
+            </a>
           </div>
         </div>
       </div>
 
       {/* Copyright */}
-      <div className="flex flex-col items-center py-2 font-aileron">
-        <p>&copy; Tous droits réservés</p>
-        <p>2023 - {new Date().getFullYear()}</p>
+      <div className="flex flex-col items-center py-4 font-aileron bg-[#1C1F26] border-t border-[#b28c2f]">
+        <p className="text-[#b28c2f] text-sm">&copy; Tous droits réservés</p>
+        <p className="text-[#b28c2f] text-sm">
+          2023 - {new Date().getFullYear()}
+        </p>
       </div>
     </footer>
   );

@@ -1,19 +1,32 @@
 "use client";
 
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Chrono } from "react-chrono";
 import { data } from "./data";
 
 const Timeline = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
-    <section className=" text-center bg-gray-900" id="parcours">
+    <section className="text-center bg-gray-900" id="parcours">
+      {/* Titre animé */}
       <h1
+        data-aos="fade-up"
         className="text-3xl md:text-4xl font-bold mb-12"
         style={{ color: "#b28c2f" }}
       >
         Parcours
       </h1>
+
       <div className="flex justify-center">
-        <div className="border border-[#b28c2f] lg:w-4/6 lg:pr-20 p-6 rounded-lg shadow-lg bg-gray-800 border border-gray-700">
+        <div
+          data-aos="fade-right"
+          className="border border-[#b28c2f] lg:w-4/6 lg:pr-20 p-6 rounded-lg shadow-lg bg-gray-800 border border-gray-700"
+        >
           <Chrono
             items={data}
             mode="VERTICAL_ALTERNATING"

@@ -2,7 +2,6 @@
 
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import Logo from "@/app/components/tools/logo";
 import { AiFillHome } from "react-icons/ai";
 import { RiPresentationFill } from "react-icons/ri";
 import { GiSkills } from "react-icons/gi";
@@ -13,8 +12,9 @@ import { BiSolidContact } from "react-icons/bi";
 const HeaderDesktop = () => {
   return (
     <header>
-      <nav className="hidden w-full lg:flex fixed top-0 z-50 flex-col bg-[#1C1F26]">
-        <div className="flex flex-row justify-around items-center py-4">
+      <nav className="hidden w-full lg:flex fixed top-0 z-50 flex-col bg-[#1C1F26] shadow-lg">
+        <div className="flex flex-row justify-between items-center py-4 px-6">
+          {/* Logo */}
           <div>
             <a
               href="http://sacko-portfolio.fr"
@@ -27,13 +27,6 @@ const HeaderDesktop = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                {/* Import d'une police Google en ligne */}
-                <style>
-                  {`
-            @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-          `}
-                </style>
-
                 {/* Ailes Gauche */}
                 <path
                   d="M150 100 C80 70, 50 40, 60 30 C90 30, 130 70, 150 90"
@@ -89,14 +82,16 @@ const HeaderDesktop = () => {
               </svg>
             </a>
           </div>
-          <ul className="text-[#f2a900] px-4 px-4 font-klein flex flex-row uppercase">
-            <li className="flex items-center gap-x-2">
+
+          {/* Menu de Navigation */}
+          <ul className="text-[#F2A900] flex space-x-8 font-klein uppercase tracking-wide">
+            <li className="flex items-center gap-x-2 hover:text-white transition duration-300">
               <AiFillHome />
               <a href="http://sacko-portfolio.fr" aria-label="Accueil">
                 Accueil
               </a>
             </li>
-            <li className="px-4 flex items-center gap-x-2">
+            <li className="flex items-center gap-x-2 hover:text-white transition duration-300">
               <RiPresentationFill />
               <AnchorLink
                 href="#Présentation"
@@ -106,7 +101,7 @@ const HeaderDesktop = () => {
                 Présentation
               </AnchorLink>
             </li>
-            <li className="px-4 flex items-center gap-x-2">
+            <li className="flex items-center gap-x-2 hover:text-white transition duration-300">
               <GiSkills />
               <AnchorLink
                 href="#Compétences"
@@ -116,7 +111,7 @@ const HeaderDesktop = () => {
                 Compétences
               </AnchorLink>
             </li>
-            <li className="px-4 flex items-center gap-x-2">
+            <li className="flex items-center gap-x-2 hover:text-white transition duration-300">
               <AiFillProject />
               <AnchorLink
                 href="#Projet"
@@ -126,7 +121,7 @@ const HeaderDesktop = () => {
                 Projets
               </AnchorLink>
             </li>
-            <li className="px-4 flex items-center gap-x-2">
+            <li className="flex items-center gap-x-2 hover:text-white transition duration-300">
               <TbTimelineEventText />
               <AnchorLink
                 href="#Parcours"
@@ -136,7 +131,7 @@ const HeaderDesktop = () => {
                 Parcours
               </AnchorLink>
             </li>
-            <li className="px-4 flex items-center gap-x-2">
+            <li className="flex items-center gap-x-2 hover:text-white transition duration-300">
               <BiSolidContact />
               <AnchorLink
                 href="#Contact"

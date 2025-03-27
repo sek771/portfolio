@@ -6,8 +6,6 @@ import { LuLinkedin } from "react-icons/lu";
 import { slide as Menu } from "react-burger-menu";
 import { styles } from "./styles";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-
-import { SiFacebook } from "react-icons/si";
 import { useState } from "react";
 
 const MenuNav = () => {
@@ -18,9 +16,10 @@ const MenuNav = () => {
   };
 
   return (
-    <Menu styles={styles} isOpen={showMenu === true ? false : null}>
-      <div className="">
-        <div className="font-aileron flex flex-col items-center pt-10 pb-20">
+    <Menu styles={styles} isOpen={showMenu ? false : null}>
+      <div className="font-aileron text-white">
+        {/* Logo et attribution */}
+        <div className="flex flex-col items-center pt-10 pb-10">
           <a href="http://localhost:3000">
             <svg
               width="300"
@@ -29,13 +28,6 @@ const MenuNav = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Import d'une police Google en ligne */}
-              <style>
-                {`
-            @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-          `}
-              </style>
-
               {/* Ailes Gauche */}
               <path
                 d="M150 100 C80 70, 50 40, 60 30 C90 30, 130 70, 150 90"
@@ -90,30 +82,39 @@ const MenuNav = () => {
               </text>
             </svg>
           </a>
-          <h1>
+          <h1 className="mt-4 text-xl text-center font-semibold">
             Seckou <span className="font-bold uppercase">Sacko</span>
           </h1>
-          <h2>contact@sacko-portfolio.fr</h2>
-          <h2>07 81 66 40 53</h2>
+          <h2 className="text-lg mt-2">contact@sacko-portfolio.fr</h2>
+          <h2 className="text-lg">07 81 66 40 53</h2>
         </div>
-        <ul className="font-aileron mx-5">
-          <li className="">
-            <a href="http://localhost:3000">Accueil</a>
+
+        {/* Navigation */}
+        <ul className="font-aileron text-lg mx-5">
+          <li>
+            <a
+              href="http://localhost:3000"
+              className="block py-2 text-center hover:text-[#b28c2f] transition duration-300"
+            >
+              Accueil
+            </a>
           </li>
           <li className="py-2">
             <AnchorLink
               href="#Présentation"
               offset={() => 100}
               onClick={() => HideMenu()}
+              className="block text-center hover:text-[#b28c2f] transition duration-300"
             >
               Présentation
             </AnchorLink>
           </li>
-          <li className="">
+          <li>
             <AnchorLink
               href="#Compétences"
               offset={() => 100}
               onClick={() => HideMenu()}
+              className="block py-2 text-center hover:text-[#b28c2f] transition duration-300"
             >
               Compétences
             </AnchorLink>
@@ -123,15 +124,17 @@ const MenuNav = () => {
               href="#Projet"
               offset={() => 100}
               onClick={() => HideMenu()}
+              className="block text-center hover:text-[#b28c2f] transition duration-300"
             >
               Projets
             </AnchorLink>
           </li>
-          <li className="">
+          <li>
             <AnchorLink
               href="#Parcours"
               offset={() => 100}
               onClick={() => HideMenu()}
+              className="block py-2 text-center hover:text-[#b28c2f] transition duration-300"
             >
               Parcours
             </AnchorLink>
@@ -141,40 +144,49 @@ const MenuNav = () => {
               href="#Contact"
               offset={() => 100}
               onClick={() => HideMenu()}
+              className="block text-center hover:text-[#b28c2f] transition duration-300"
             >
               Contact
             </AnchorLink>
           </li>
         </ul>
-        <div className="pt-52 grid grid-cols-3">
+
+        {/* Réseaux sociaux */}
+        <div className="pt-6 grid grid-cols-3 gap-4">
           <div className="flex justify-center items-center">
             <a
               href="https://github.com/sek771"
-              className="flex justify-center items-center"
+              className="flex justify-center items-center hover:text-[#b28c2f] transition duration-300"
             >
-              <FiGithub size={25} />
+              <FiGithub size={30} />
             </a>
           </div>
           <div className="flex justify-center items-center">
             <a
               href="https://fr.linkedin.com/in/sekou-sacko-a93b1227a"
-              className="flex justify-center items-center"
+              className="flex justify-center items-center hover:text-[#b28c2f] transition duration-300"
             >
-              <LuLinkedin size={25} />
+              <LuLinkedin size={30} />
             </a>
           </div>
           <div className="flex justify-center items-center">
             <a
               href="sacko-portfolio/docs/cv.pdf"
-              className="flex justify-center items-center"
+              className="flex justify-center items-center hover:text-[#b28c2f] transition duration-300"
             >
-              <TbFileCv size={25} />
+              <TbFileCv size={30} />
             </a>
           </div>
         </div>
-        <div className="font-aileron flex flex-col items-center pt-4">
-          <p>&copy; Tous droits réservés</p>
-          <p>2023 - {new Date().getFullYear()}</p>
+
+        {/* Copyright */}
+        <div className="font-aileron flex flex-col items-center pt-6">
+          <p className="text-sm text-center text-[#b28c2f]">
+            &copy; Tous droits réservés
+          </p>
+          <p className="text-sm text-center text-[#b28c2f]">
+            2023 - {new Date().getFullYear()}
+          </p>
         </div>
       </div>
     </Menu>
