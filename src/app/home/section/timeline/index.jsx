@@ -12,7 +12,7 @@ const Timeline = () => {
   }, []);
 
   return (
-    <section className="text-center bg-gray-900" id="parcours">
+    <section className="text-center bg-gray-900" id="timeline">
       {/* Titre animé */}
       <h1
         data-aos="fade-up"

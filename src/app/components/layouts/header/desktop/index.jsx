@@ -12,7 +12,7 @@ import { BiSolidContact } from "react-icons/bi";
 const HeaderDesktop = () => {
   return (
     <header>
-      <nav className="hidden w-full lg:flex fixed top-0 z-50 flex-col bg-[#1C1F26] shadow-lg">
+      <nav className="hidden w-full lg:flex  top-0 z-50 flex-col bg-[#1C1F26] shadow-lg">
         <div className="flex flex-row justify-between items-center py-4 px-6">
           {/* Logo */}
           <div>
@@ -94,7 +94,7 @@ const HeaderDesktop = () => {
             <li className="flex items-center gap-x-2 hover:text-white transition duration-300">
               <RiPresentationFill />
               <AnchorLink
-                href="#Présentation"
+                href="#introduction"
                 offset={() => 100}
                 aria-label="Présentation"
               >
@@ -104,7 +104,7 @@ const HeaderDesktop = () => {
             <li className="flex items-center gap-x-2 hover:text-white transition duration-300">
               <GiSkills />
               <AnchorLink
-                href="#Compétences"
+                href="#skills"
                 offset={() => 100}
                 aria-label="Compétences"
               >
@@ -114,7 +114,7 @@ const HeaderDesktop = () => {
             <li className="flex items-center gap-x-2 hover:text-white transition duration-300">
               <AiFillProject />
               <AnchorLink
-                href="#Projet"
+                href="#Project"
                 offset={() => 100}
                 aria-label="Projets"
               >
@@ -124,7 +124,7 @@ const HeaderDesktop = () => {
             <li className="flex items-center gap-x-2 hover:text-white transition duration-300">
               <TbTimelineEventText />
               <AnchorLink
-                href="#Parcours"
+                href="timeline"
                 offset={() => 100}
                 aria-label="Parcours"
               >

@@ -25,9 +25,9 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="bg-gray-900 text-white py-16 text-center">
+    <section id="project" className="bg-gray-900 text-white py-16 text-center">
       <h1 className="text-3xl md:text-4xl font-extrabold mb-12 text-[#b28c2f]">
-        Mes Projets
+        Projets
       </h1>
       <div className="grid justify-items-center">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 px-4">

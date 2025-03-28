@@ -101,7 +101,7 @@ const MenuNav = () => {
           </li>
           <li className="py-2">
             <AnchorLink
-              href="#Présentation"
+              href="#introduction"
               offset={() => 100}
               onClick={() => HideMenu()}
               className="block text-center hover:text-[#b28c2f] transition duration-300"
@@ -111,7 +111,7 @@ const MenuNav = () => {
           </li>
           <li>
             <AnchorLink
-              href="#Compétences"
+              href="#skills"
               offset={() => 100}
               onClick={() => HideMenu()}
               className="block py-2 text-center hover:text-[#b28c2f] transition duration-300"
@@ -121,7 +121,7 @@ const MenuNav = () => {
           </li>
           <li className="py-2">
             <AnchorLink
-              href="#Projet"
+              href="#project"
               offset={() => 100}
               onClick={() => HideMenu()}
               className="block text-center hover:text-[#b28c2f] transition duration-300"
@@ -131,7 +131,7 @@ const MenuNav = () => {
           </li>
           <li>
             <AnchorLink
-              href="#Parcours"
+              href="#timeline"
               offset={() => 100}
               onClick={() => HideMenu()}
               className="block py-2 text-center hover:text-[#b28c2f] transition duration-300"

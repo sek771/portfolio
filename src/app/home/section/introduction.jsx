@@ -13,7 +13,7 @@ const Introduction = () => {
   return (
     <section
       className="grid justify-items-center bg-gray-900 text-white"
-      id="Présentation"
+      id="intoduction"
     >
       <div className="lg:w-4/6 text-center my-8">
         {/* Titre animé */}

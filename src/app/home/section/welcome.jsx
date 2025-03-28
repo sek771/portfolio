@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Animation from "@/app/components/tools/animation/welcome";
 import { TbFileCv } from "react-icons/tb";
 
-const Header = () => {
+const Welcome = () => {
   const canvasRef = useRef(null);
   const animationFrameRef = useRef(null);
 
@@ -188,4 +188,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Welcome;

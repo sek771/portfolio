@@ -27,7 +27,7 @@ const Skills = () => {
         data-aos="fade-up"
         className="text-3xl md:text-4xl font-extrabold mb-12 text-[#b28c2f]"
       >
-        Mes Compétences
+        Compétences
       </h1>
 
       <div className="grid justify-items-center">
