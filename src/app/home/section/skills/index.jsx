@@ -21,7 +21,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-gray-900 text-white py-16 text-center">
+    <section className="bg-gray-900 text-white py-16 text-center">
       {/* Titre animé */}
       <h1
         data-aos="fade-up"

@@ -11,7 +11,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <section className="text-center bg-gray-900 py-16" id="contact">
+    <section className="text-center bg-gray-900 py-16">
       {/* Titre animé */}
       <h1
         data-aos="fade-up"
