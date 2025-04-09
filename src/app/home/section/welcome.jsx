@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Animation from "@/app/components/tools/animation/welcome";
-import { TbFileCv } from "react-icons/tb";
 
 const Welcome = () => {
   const canvasRef = useRef(null);
@@ -11,6 +10,7 @@ const Welcome = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
@@ -93,13 +93,13 @@ const Welcome = () => {
       }
     }
 
-    function init() {
+    const init = () => {
       stars = Array.from({ length: numStars }, () => new Star());
       planets = Array.from({ length: 5 }, () => new Planet());
       shootingStars = Array.from({ length: 3 }, () => new ShootingStar());
-    }
+    };
 
-    function animate() {
+    const animate = () => {
       ctx.fillStyle = "rgba(10, 10, 35, 0.9)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -120,19 +120,21 @@ const Welcome = () => {
       shootingStars.forEach((s) => s.update());
 
       animationFrameRef.current = requestAnimationFrame(animate);
-    }
+    };
 
     init();
     animate();
 
-    window.addEventListener("resize", () => {
+    const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       init();
-    });
+    };
+
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", () => {});
+      window.removeEventListener("resize", handleResize);
       if (animationFrameRef.current)
         cancelAnimationFrame(animationFrameRef.current);
     };
@@ -140,12 +142,10 @@ const Welcome = () => {
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      {/* Fond galaxie animé */}
       <div className="absolute inset-0">
         <canvas ref={canvasRef} className="w-full h-full"></canvas>
       </div>
 
-      {/* Contenu */}
       <div className="relative z-10 text-yellow-200 w-full h-screen flex flex-col justify-center items-center">
         <svg
           className="md:w-72 lg:w-60 md:h-36 lg:h-24"
