@@ -8,14 +8,17 @@ const Welcome = () => {
   const animationFrameRef = useRef(null);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Set canvas size based on window dimensions
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-
-    console.log(window.innerWidth);
-    console.log(window.innerHeight);
 
     const numStars = 200;
     let stars = [];
@@ -143,7 +146,7 @@ const Welcome = () => {
   return (
     <section className="relative w-full h-screen overflow-hidden">
       <div className="absolute inset-0">
-        <canvas ref={canvasRef} className="w-full h-full"></canvas>
+        <canvas ref={canvasRef} className="w-full h-full" />
       </div>
 
       <div className="relative z-10 text-yellow-200 w-full h-screen flex flex-col justify-center items-center">
