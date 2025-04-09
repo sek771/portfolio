@@ -8,14 +8,14 @@ const Welcome = () => {
   const animationFrameRef = useRef(null);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Set canvas size based on window dimensions
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init();
+    };
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -125,14 +125,11 @@ const Welcome = () => {
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
+    // Initialize and start animation
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     init();
     animate();
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      init();
-    };
 
     window.addEventListener("resize", handleResize);
 
