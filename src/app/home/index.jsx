@@ -1,5 +1,3 @@
-"use client";
-
 import Main from "@/app/components/layouts/main";
 import Welcome from "@/app/home/section/welcome"; // Renommé pour plus de clarté
 import Introduction from "@/app/home/section/introduction";
