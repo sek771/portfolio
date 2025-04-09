@@ -8,7 +8,7 @@ import Projects from "@/app/home/section/projects";
 import Timeline from "@/app/home/section/timeline";
 import Contact from "@/app/home/section/contact";
 
-const Home = () => {
+export default function Home() {
   return (
     <Main className="overflow-x-hidden">
       <Welcome />
@@ -19,6 +19,4 @@ const Home = () => {
       <Contact />
     </Main>
   );
-};
-
-export default Home;
+}
