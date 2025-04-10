@@ -11,9 +11,9 @@ const Welcome = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    var handleResize = () => {
+      handleResize.canvas.width = window.innerWidth;
+      handleResize.canvas.height = window.innerHeight;
       init();
     };
 
@@ -184,6 +184,9 @@ const Welcome = () => {
           </button>
         </div>
       </div>
+
+      {/* Decorative Section */}
+      <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-blue-900 to-transparent"></div>
     </section>
   );
 };
