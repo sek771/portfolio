@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
@@ -6,6 +8,9 @@ const Welcome = () => {
   const animationFrameRef = useRef(null);
 
   useEffect(() => {
+    // Vérifier si nous sommes côté client
+    if (typeof window === "undefined") return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
