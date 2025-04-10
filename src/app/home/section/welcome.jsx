@@ -1,16 +1,11 @@
-"use client";
-
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import Animation from "@/app/components/tools/animation/welcome";
 
 const Welcome = () => {
   const canvasRef = useRef(null);
   const animationFrameRef = useRef(null);
 
   useEffect(() => {
-    if (typeof window === "undefined") return; // Vérifie si window est défini
-
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -38,12 +33,15 @@ const Welcome = () => {
         this.opacity = Math.random();
         this.twinkleSpeed = Math.random() * 0.02;
       }
+
       draw() {
+        if (!ctx) return;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
         ctx.fill();
       }
+
       update() {
         this.opacity += this.twinkleSpeed * (Math.random() > 0.5 ? 1 : -1);
         this.opacity = Math.min(1, Math.max(0.3, this.opacity));
@@ -62,7 +60,9 @@ const Welcome = () => {
         this.radius = Math.random() * 40 + 20;
         this.color = `hsl(${Math.random() * 360}, 80%, 60%)`;
       }
+
       draw() {
+        if (!ctx) return;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
@@ -80,7 +80,9 @@ const Welcome = () => {
         this.length = Math.random() * 80 + 30;
         this.speed = Math.random() * 10 + 5;
       }
+
       draw() {
+        if (!ctx) return;
         ctx.beginPath();
         ctx.moveTo(this.x, this.y);
         ctx.lineTo(this.x - this.length, this.y + this.length);
@@ -88,6 +90,7 @@ const Welcome = () => {
         ctx.lineWidth = 2;
         ctx.stroke();
       }
+
       update() {
         this.x += this.speed;
         this.y += this.speed;
@@ -106,6 +109,8 @@ const Welcome = () => {
     };
 
     const animate = () => {
+      if (!ctx) return;
+
       ctx.fillStyle = "rgba(10, 10, 35, 0.9)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -128,7 +133,6 @@ const Welcome = () => {
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
-    // Initialize and start animation
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     init();
@@ -137,8 +141,10 @@ const Welcome = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      if (animationFrameRef.current)
+      window.removeEventListener("resize", handleResize);
+      if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
+      }
     };
   }, []);
 
@@ -149,42 +155,36 @@ const Welcome = () => {
       </div>
 
       <div className="relative z-10 text-yellow-200 w-full h-screen flex flex-col justify-center items-center">
-        <svg
-          className="md:w-72 lg:w-60 md:h-36 lg:h-24"
-          viewBox="0 0 600 200"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+        <motion.h1
+          className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <text
-            x="300"
-            y="130"
-            fontFamily="'Great Vibes', cursive"
-            fontSize="70"
-            fontWeight="bold"
-            fill="#F2A900"
-            textAnchor="middle"
-          >
-            SACKO
-          </text>
-        </svg>
-
-        <h1 className="font-klein text-center mx-4 py-10 lg:text-xl">
           Bonjour et bienvenue sur mon portfolio !
-        </h1>
-        <Animation />
-        <div className="font-klein flex flex-col pt-20 lg:flex-row">
+        </motion.h1>
+
+        <motion.div
+          className="flex flex-col space-y-6 text-xl md:text-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
           <a
-            href="http://sacko-portfolio.fr/docs/cv.pdf"
+            href="/docs/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="uppercase lg:pr-8 my-3"
+            className="text-yellow-200 hover:text-yellow-400 transition-colors duration-300 uppercase tracking-wider"
           >
-            Mon CV
+            MON CV
           </a>
-          <button className="uppercase lg:pl-8" aria-label="Voir mes projets">
-            Mes projets
+          <button
+            className="text-yellow-200 hover:text-yellow-400 transition-colors duration-300 uppercase tracking-wider"
+            aria-label="Voir mes projets"
+          >
+            MES PROJETS
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
