@@ -1,5 +1,5 @@
 import Main from "@/app/components/layouts/main";
-import Welcome from "@/app/home/section/welcome"; // Renommé pour plus de clarté
+import Welcome from "@/app/home/section/welcome/Welcome"; // Renommé pour plus de clarté
 import Introduction from "@/app/home/section/introduction";
 import Skills from "@/app/home/section/skills";
 import Projects from "@/app/home/section/projects";

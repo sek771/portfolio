@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
@@ -8,7 +6,6 @@ const Welcome = () => {
   const animationFrameRef = useRef(null);
 
   useEffect(() => {
-    // Vérifier si nous sommes côté client
     if (typeof window === "undefined") return;
 
     const canvas = canvasRef.current;
@@ -119,12 +116,7 @@ const Welcome = () => {
       ctx.fillStyle = "rgba(10, 10, 35, 0.9)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      const gradient = ctx.createLinearGradient(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-      );
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
       gradient.addColorStop(0, "#0a0a23");
       gradient.addColorStop(0.5, "#1b2957");
       gradient.addColorStop(1, "#0a0a23");
@@ -161,7 +153,7 @@ const Welcome = () => {
 
       <div className="relative z-10 text-yellow-200 w-full h-screen flex flex-col justify-center items-center">
         <motion.h1
-          className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-16"
+          className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-16 text-center px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -181,13 +173,13 @@ const Welcome = () => {
             rel="noopener noreferrer"
             className="text-yellow-200 hover:text-yellow-400 transition-colors duration-300 uppercase tracking-wider"
           >
-            MON CV
+            Mon CV
           </a>
           <button
             className="text-yellow-200 hover:text-yellow-400 transition-colors duration-300 uppercase tracking-wider"
             aria-label="Voir mes projets"
           >
-            MES PROJETS
+            Mes Projets
           </button>
         </motion.div>
       </div>

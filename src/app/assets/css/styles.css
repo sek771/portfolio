@@ -17,3 +17,19 @@
   font-family: "Aileron";
   src: url("../fonts/aileron/Aileron-Regular.otf") format("opentype");
 }
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 10, 35;
+  --background-end-rgb: 27, 41, 87;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+}
