@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
 import { motion } from "framer-motion";
 import Animation from "@/app/components/tools/animation/welcome";
 
 const Welcome = () => {
+  const [isClient, setIsClient] = useState(false); // Nouveau state pour détecter l'environnement client
   const canvasRef = useRef(null);
   const animationFrameRef = useRef(null);
   const starsRef = useRef([]);
@@ -12,12 +13,17 @@ const Welcome = () => {
   const shootingStarsRef = useRef([]);
   const ctxRef = useRef(null);
 
-  // Fonction init déplacée ici
+  // Détecter si on est en environnement client
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const init = useCallback(() => {
+    if (!isClient) return; // Si on n'est pas en environnement client, on arrête l'initialisation
+
     const canvas = canvasRef.current;
     if (!canvas || !ctxRef.current) return;
 
-    // Déclaration des classes à l'intérieur de la fonction init
     class Star {
       constructor() {
         this.x = Math.random() * canvas.width;
@@ -100,10 +106,11 @@ const Welcome = () => {
       { length: 3 },
       () => new ShootingStar()
     );
-  }, []);
+  }, [isClient]);
 
-  // Setup du canvas
   useEffect(() => {
+    if (!isClient) return; // Assurer que l'effet ne s'exécute que côté client
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -114,25 +121,11 @@ const Welcome = () => {
     if (!ctx) return;
 
     ctxRef.current = ctx;
-  }, []);
+  }, [isClient]);
 
-  // Resize handler
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!isClient) return; // Assurer que l'animation ne démarre que côté client
 
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      init();
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [init]);
-
-  // Lancer l'animation
-  useEffect(() => {
     const animate = () => {
       const canvas = canvasRef.current;
       const ctx = ctxRef.current;
@@ -165,7 +158,7 @@ const Welcome = () => {
       if (animationFrameRef.current)
         cancelAnimationFrame(animationFrameRef.current);
     };
-  }, []);
+  }, [isClient]);
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
