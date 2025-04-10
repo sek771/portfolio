@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import Animation from "@/app/components/tools/animation/welcome";
 
@@ -12,7 +12,97 @@ const Welcome = () => {
   const shootingStarsRef = useRef([]);
   const ctxRef = useRef(null);
 
-  // 1. Setup canvas context
+  // Fonction init déplacée ici
+  const init = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !ctxRef.current) return;
+
+    // Déclaration des classes à l'intérieur de la fonction init
+    class Star {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 1.5;
+        this.dx = (Math.random() - 0.5) * 0.3;
+        this.dy = (Math.random() - 0.5) * 0.3;
+        this.opacity = Math.random();
+        this.twinkleSpeed = Math.random() * 0.02;
+      }
+      draw() {
+        const ctx = ctxRef.current;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.fill();
+      }
+      update() {
+        this.opacity += this.twinkleSpeed * (Math.random() > 0.5 ? 1 : -1);
+        this.opacity = Math.min(1, Math.max(0.3, this.opacity));
+        this.x += this.dx;
+        this.y += this.dy;
+        const canvas = canvasRef.current;
+        if (this.x < 0 || this.x > canvas.width) this.dx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.dy *= -1;
+        this.draw();
+      }
+    }
+
+    class Planet {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 40 + 20;
+        this.color = `hsl(${Math.random() * 360}, 80%, 60%)`;
+      }
+      draw() {
+        const ctx = ctxRef.current;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = this.color;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    class ShootingStar {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = (Math.random() * canvas.height) / 2;
+        this.length = Math.random() * 80 + 30;
+        this.speed = Math.random() * 10 + 5;
+      }
+      draw() {
+        const ctx = ctxRef.current;
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(this.x - this.length, this.y + this.length);
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+      update() {
+        const canvas = canvasRef.current;
+        this.x += this.speed;
+        this.y += this.speed;
+        if (this.x > canvas.width || this.y > canvas.height) {
+          this.x = Math.random() * canvas.width;
+          this.y = (Math.random() * canvas.height) / 2;
+        }
+        this.draw();
+      }
+    }
+
+    starsRef.current = Array.from({ length: 200 }, () => new Star());
+    planetsRef.current = Array.from({ length: 5 }, () => new Planet());
+    shootingStarsRef.current = Array.from(
+      { length: 3 },
+      () => new ShootingStar()
+    );
+  }, []);
+
+  // Setup du canvas
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -26,7 +116,7 @@ const Welcome = () => {
     ctxRef.current = ctx;
   }, []);
 
-  // 2. Resize handler
+  // Resize handler
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -39,141 +129,43 @@ const Welcome = () => {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [init]);
 
-  // 3. Initialiser les objets
+  // Lancer l'animation
   useEffect(() => {
-    init();
-  }, []);
+    const animate = () => {
+      const canvas = canvasRef.current;
+      const ctx = ctxRef.current;
+      if (!canvas || !ctx) return;
 
-  // 4. Lancer l’animation
-  useEffect(() => {
+      ctx.fillStyle = "rgba(10, 10, 35, 0.9)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const gradient = ctx.createLinearGradient(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+      gradient.addColorStop(0, "#0a0a23");
+      gradient.addColorStop(0.5, "#1b2957");
+      gradient.addColorStop(1, "#0a0a23");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      starsRef.current.forEach((star) => star.update());
+      planetsRef.current.forEach((planet) => planet.draw());
+      shootingStarsRef.current.forEach((s) => s.update());
+
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
     animate();
     return () => {
       if (animationFrameRef.current)
         cancelAnimationFrame(animationFrameRef.current);
     };
   }, []);
-
-  // Classes & logique
-  const init = () => {
-    const canvas = canvasRef.current;
-    if (!canvas || !ctxRef.current) return;
-
-    const numStars = 200;
-    starsRef.current = Array.from({ length: numStars }, () => new Star());
-    planetsRef.current = Array.from({ length: 5 }, () => new Planet());
-    shootingStarsRef.current = Array.from(
-      { length: 3 },
-      () => new ShootingStar()
-    );
-  };
-
-  class Star {
-    constructor() {
-      const canvas = canvasRef.current;
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.radius = Math.random() * 1.5;
-      this.dx = (Math.random() - 0.5) * 0.3;
-      this.dy = (Math.random() - 0.5) * 0.3;
-      this.opacity = Math.random();
-      this.twinkleSpeed = Math.random() * 0.02;
-    }
-    draw() {
-      const ctx = ctxRef.current;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-      ctx.fill();
-    }
-    update() {
-      this.opacity += this.twinkleSpeed * (Math.random() > 0.5 ? 1 : -1);
-      this.opacity = Math.min(1, Math.max(0.3, this.opacity));
-      this.x += this.dx;
-      this.y += this.dy;
-      const canvas = canvasRef.current;
-      if (this.x < 0 || this.x > canvas.width) this.dx *= -1;
-      if (this.y < 0 || this.y > canvas.height) this.dy *= -1;
-      this.draw();
-    }
-  }
-
-  class Planet {
-    constructor() {
-      const canvas = canvasRef.current;
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.radius = Math.random() * 40 + 20;
-      this.color = `hsl(${Math.random() * 360}, 80%, 60%)`;
-    }
-    draw() {
-      const ctx = ctxRef.current;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color;
-      ctx.shadowBlur = 20;
-      ctx.shadowColor = this.color;
-      ctx.fill();
-      ctx.shadowBlur = 0;
-    }
-  }
-
-  class ShootingStar {
-    constructor() {
-      const canvas = canvasRef.current;
-      this.x = Math.random() * canvas.width;
-      this.y = (Math.random() * canvas.height) / 2;
-      this.length = Math.random() * 80 + 30;
-      this.speed = Math.random() * 10 + 5;
-    }
-    draw() {
-      const ctx = ctxRef.current;
-      ctx.beginPath();
-      ctx.moveTo(this.x, this.y);
-      ctx.lineTo(this.x - this.length, this.y + this.length);
-      ctx.strokeStyle = "white";
-      ctx.lineWidth = 2;
-      ctx.stroke();
-    }
-    update() {
-      const canvas = canvasRef.current;
-      this.x += this.speed;
-      this.y += this.speed;
-      if (this.x > canvas.width || this.y > canvas.height) {
-        this.x = Math.random() * canvas.width;
-        this.y = (Math.random() * canvas.height) / 2;
-      }
-      this.draw();
-    }
-  }
-
-  const animate = () => {
-    const canvas = canvasRef.current;
-    const ctx = ctxRef.current;
-    if (!canvas || !ctx) return;
-
-    ctx.fillStyle = "rgba(10, 10, 35, 0.9)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    const gradient = ctx.createLinearGradient(
-      0,
-      0,
-      canvas.width,
-      canvas.height
-    );
-    gradient.addColorStop(0, "#0a0a23");
-    gradient.addColorStop(0.5, "#1b2957");
-    gradient.addColorStop(1, "#0a0a23");
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    starsRef.current.forEach((star) => star.update());
-    planetsRef.current.forEach((planet) => planet.draw());
-    shootingStarsRef.current.forEach((s) => s.update());
-
-    animationFrameRef.current = requestAnimationFrame(animate);
-  };
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
