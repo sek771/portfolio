@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import Animation from "@/app/components/tools/animation/welcome";
 
 const Welcome = () => {
@@ -11,9 +12,9 @@ const Welcome = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    var handleResize = () => {
-      handleResize.canvas.width = window.innerWidth;
-      handleResize.canvas.height = window.innerHeight;
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
       init();
     };
 
@@ -125,7 +126,6 @@ const Welcome = () => {
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
-    // Initialize and start animation
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     init();
@@ -146,12 +146,21 @@ const Welcome = () => {
         <canvas ref={canvasRef} className="w-full h-full" />
       </div>
 
-      <div className="relative z-10 text-yellow-200 w-full h-screen flex flex-col justify-center items-center">
-        <svg
+      {/* Animated content */}
+      <motion.div
+        className="relative z-10 text-yellow-200 w-full h-screen flex flex-col justify-center items-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <motion.svg
           className="md:w-72 lg:w-60 md:h-36 lg:h-24"
           viewBox="0 0 600 200"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
         >
           <text
             x="300"
@@ -164,13 +173,25 @@ const Welcome = () => {
           >
             SACKO
           </text>
-        </svg>
+        </motion.svg>
 
-        <h1 className="font-klein text-center mx-4 py-10 lg:text-xl">
+        <motion.h1
+          className="font-klein text-center mx-4 py-10 lg:text-xl"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+        >
           Bonjour et bienvenue sur mon portfolio !
-        </h1>
+        </motion.h1>
+
         <Animation />
-        <div className="font-klein flex flex-col pt-20 lg:flex-row">
+
+        <motion.div
+          className="font-klein flex flex-col pt-20 lg:flex-row"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+        >
           <a
             href="http://sacko-portfolio.fr/docs/cv.pdf"
             target="_blank"
@@ -182,11 +203,10 @@ const Welcome = () => {
           <button className="uppercase lg:pl-8" aria-label="Voir mes projets">
             Mes projets
           </button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      {/* Decorative Section */}
-      <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-blue-900 to-transparent"></div>
+      <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-blue-900 to-transparent" />
     </section>
   );
 };
