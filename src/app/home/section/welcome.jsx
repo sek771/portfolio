@@ -1,28 +1,32 @@
 "use client";
 
-import React, { useEffect, useRef, useCallback, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Animation from "@/app/components/tools/animation/welcome";
 
 const Welcome = () => {
-  const [isClient, setIsClient] = useState(false); // Nouveau state pour détecter l'environnement client
   const canvasRef = useRef(null);
   const animationFrameRef = useRef(null);
-  const starsRef = useRef([]);
-  const planetsRef = useRef([]);
-  const shootingStarsRef = useRef([]);
-  const ctxRef = useRef(null);
 
-  // Détecter si on est en environnement client
   useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  const init = useCallback(() => {
-    if (!isClient) return; // Si on n'est pas en environnement client, on arrête l'initialisation
+    if (typeof window === "undefined") return; // Vérifie si window est défini
 
     const canvas = canvasRef.current;
-    if (!canvas || !ctxRef.current) return;
+    if (!canvas) return;
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init();
+    };
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const numStars = 200;
+    let stars = [];
+    let planets = [];
+    let shootingStars = [];
 
     class Star {
       constructor() {
@@ -35,7 +39,6 @@ const Welcome = () => {
         this.twinkleSpeed = Math.random() * 0.02;
       }
       draw() {
-        const ctx = ctxRef.current;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
@@ -46,7 +49,6 @@ const Welcome = () => {
         this.opacity = Math.min(1, Math.max(0.3, this.opacity));
         this.x += this.dx;
         this.y += this.dy;
-        const canvas = canvasRef.current;
         if (this.x < 0 || this.x > canvas.width) this.dx *= -1;
         if (this.y < 0 || this.y > canvas.height) this.dy *= -1;
         this.draw();
@@ -61,7 +63,6 @@ const Welcome = () => {
         this.color = `hsl(${Math.random() * 360}, 80%, 60%)`;
       }
       draw() {
-        const ctx = ctxRef.current;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
@@ -80,7 +81,6 @@ const Welcome = () => {
         this.speed = Math.random() * 10 + 5;
       }
       draw() {
-        const ctx = ctxRef.current;
         ctx.beginPath();
         ctx.moveTo(this.x, this.y);
         ctx.lineTo(this.x - this.length, this.y + this.length);
@@ -89,7 +89,6 @@ const Welcome = () => {
         ctx.stroke();
       }
       update() {
-        const canvas = canvasRef.current;
         this.x += this.speed;
         this.y += this.speed;
         if (this.x > canvas.width || this.y > canvas.height) {
@@ -100,37 +99,13 @@ const Welcome = () => {
       }
     }
 
-    starsRef.current = Array.from({ length: 200 }, () => new Star());
-    planetsRef.current = Array.from({ length: 5 }, () => new Planet());
-    shootingStarsRef.current = Array.from(
-      { length: 3 },
-      () => new ShootingStar()
-    );
-  }, [isClient]);
-
-  useEffect(() => {
-    if (!isClient) return; // Assurer que l'effet ne s'exécute que côté client
-
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    ctxRef.current = ctx;
-  }, [isClient]);
-
-  useEffect(() => {
-    if (!isClient) return; // Assurer que l'animation ne démarre que côté client
+    const init = () => {
+      stars = Array.from({ length: numStars }, () => new Star());
+      planets = Array.from({ length: 5 }, () => new Planet());
+      shootingStars = Array.from({ length: 3 }, () => new ShootingStar());
+    };
 
     const animate = () => {
-      const canvas = canvasRef.current;
-      const ctx = ctxRef.current;
-      if (!canvas || !ctx) return;
-
       ctx.fillStyle = "rgba(10, 10, 35, 0.9)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -146,19 +121,26 @@ const Welcome = () => {
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      starsRef.current.forEach((star) => star.update());
-      planetsRef.current.forEach((planet) => planet.draw());
-      shootingStarsRef.current.forEach((s) => s.update());
+      stars.forEach((star) => star.update());
+      planets.forEach((planet) => planet.draw());
+      shootingStars.forEach((s) => s.update());
 
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
+    // Initialize and start animation
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    init();
     animate();
+
+    window.addEventListener("resize", handleResize);
+
     return () => {
       if (animationFrameRef.current)
         cancelAnimationFrame(animationFrameRef.current);
     };
-  }, [isClient]);
+  }, []);
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
@@ -166,20 +148,12 @@ const Welcome = () => {
         <canvas ref={canvasRef} className="w-full h-full" />
       </div>
 
-      <motion.div
-        className="relative z-10 text-yellow-200 w-full h-screen flex flex-col justify-center items-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <motion.svg
+      <div className="relative z-10 text-yellow-200 w-full h-screen flex flex-col justify-center items-center">
+        <svg
           className="md:w-72 lg:w-60 md:h-36 lg:h-24"
           viewBox="0 0 600 200"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
         >
           <text
             x="300"
@@ -192,25 +166,13 @@ const Welcome = () => {
           >
             SACKO
           </text>
-        </motion.svg>
+        </svg>
 
-        <motion.h1
-          className="font-klein text-center mx-4 py-10 lg:text-xl"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-        >
+        <h1 className="font-klein text-center mx-4 py-10 lg:text-xl">
           Bonjour et bienvenue sur mon portfolio !
-        </motion.h1>
-
+        </h1>
         <Animation />
-
-        <motion.div
-          className="font-klein flex flex-col pt-20 lg:flex-row"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-        >
+        <div className="font-klein flex flex-col pt-20 lg:flex-row">
           <a
             href="http://sacko-portfolio.fr/docs/cv.pdf"
             target="_blank"
@@ -222,10 +184,8 @@ const Welcome = () => {
           <button className="uppercase lg:pl-8" aria-label="Voir mes projets">
             Mes projets
           </button>
-        </motion.div>
-      </motion.div>
-
-      <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-blue-900 to-transparent" />
+        </div>
+      </div>
     </section>
   );
 };
